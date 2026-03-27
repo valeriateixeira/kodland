@@ -357,7 +357,7 @@
                       <span class="carousel-label">4. Aguarde a instalação</span>
                     </div>
                     <div class="carousel-slide" data-step="5">
-                      <img src="assets/precifica_manual/executesoftware.png" alt="Executar o software">
+                      <img src="assets/precifica_manual/ExecuteSoftware.png" alt="Executar o software">
                       <span class="carousel-label">5. Clique em Concluir</span>
                     </div>
                   </div>
@@ -985,6 +985,25 @@
       slides[idx].classList.add('active');
       dots[idx].classList.add('active');
     }
+
+    // Lightbox
+    document.querySelectorAll('.carousel-slide img, .smartscreen-images img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function () {
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        const clone = document.createElement('img');
+        clone.src = this.src;
+        clone.alt = this.alt;
+        overlay.appendChild(clone);
+        document.body.appendChild(overlay);
+        requestAnimationFrame(() => overlay.classList.add('active'));
+        overlay.addEventListener('click', () => {
+          overlay.classList.remove('active');
+          setTimeout(() => overlay.remove(), 250);
+        });
+      });
+    });
   </script>
 </body>
 </html>
