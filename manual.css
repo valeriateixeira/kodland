@@ -596,6 +596,7 @@ kbd {
   position: relative;
   margin: 16px 0 48px;
   max-width: 480px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
@@ -603,6 +604,7 @@ kbd {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   background: #fff;
   padding-bottom: 80px;
+  overflow: hidden;
 }
 
 .browser-toolbar {
@@ -1503,6 +1505,15 @@ kbd {
     padding: 10px 16px;
   }
 
+  .req-col[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
   .req-label {
     background: var(--text);
     color: #fff;
@@ -1513,6 +1524,45 @@ kbd {
   .install-step p,
   .manual-list {
     margin-left: 0;
+  }
+
+  .install-step {
+    overflow: visible;
+    padding: 20px 16px;
+  }
+
+  .carousel {
+    max-width: 100%;
+  }
+
+  .carousel-slide img {
+    max-width: 100%;
+  }
+
+  .video-banner {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .video-banner-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .video-banner-title {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .video-play-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .video-play-btn svg {
+    width: 14px;
+    height: 14px;
   }
 
   .support-contact {
