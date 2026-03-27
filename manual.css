@@ -1539,6 +1539,20 @@ kbd {
     max-width: 100%;
   }
 
+  .win-address-bar {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .win-address-bar span:not(:last-child):not(.win-path-sep) {
+    display: none;
+  }
+
+  .win-address-bar .win-path-sep:not(:last-of-type) {
+    display: none;
+  }
+
   .video-banner {
     gap: 8px;
     padding: 12px;
