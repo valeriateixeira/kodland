@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Video Thumbnail</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #1a1a1a;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+    .thumbnail {
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(135deg, #6C3CE1, #8B5CF6, #A78BFA);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .thumbnail img {
+      width: 160px;
+      height: 160px;
+      border-radius: 32px;
+    }
+    .company-name {
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .email {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    .instructions {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #aaa;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="thumbnail" id="thumbnail">
+    <img src="assets/logo.png" alt="Precifica Gestor">
+    <span class="company-name">Precifica Gestor</span>
+    <span class="email">suporte@kodaee.com</span>
+  </div>
+  <div class="instructions">
+    Right-click the thumbnail above → "Save image as..." or take a screenshot.<br>
+    The image is 1920×1080 (Full HD) to use in a video editor.
+  </div>
+</body>
+</html>

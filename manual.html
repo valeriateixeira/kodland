@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual do Usuário - Precifica Gestor</title>
+  <meta name="description" content="Manual completo do Precifica Gestor. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="manual.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo-group">
+          <img src="assets/logo.png" alt="Precifica Gestor" class="logo-img">
+          <span class="logo-text">Precifica Gestor</span>
+        </div>
+        <div class="header-links">
+          <a href="precifica.html" class="btn btn-sm">Voltar ao Site</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MANUAL HERO -->
+  <section class="manual-hero">
+    <div class="container">
+      <div class="manual-hero-content">
+        <h1>Manual Do Usuário</h1>
+        <p class="manual-version">Versão 1.0</p>
+        <div class="manual-product-name">PRECIFICA GESTOR</div>
+        <div class="manual-platform">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          Windows
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANUAL INFO BAR -->
+  <section class="manual-info">
+    <div class="container">
+      <div class="manual-info-grid">
+        <div class="manual-info-item">
+          <span class="manual-info-label">Versão</span>
+          <span class="manual-info-value">1.4.6</span>
+        </div>
+        <div class="manual-info-item">
+          <span class="manual-info-label">Lançamento</span>
+          <span class="manual-info-value">Março de 2026</span>
+        </div>
+        <div class="manual-info-item">
+          <span class="manual-info-label">Suporte</span>
+          <span class="manual-info-value"><a href="mailto:suporte@kodaee.com">suporte@kodaee.com</a></span>
+        </div>
+        <div class="manual-info-item">
+          <span class="manual-info-label">Desenvolvido por</span>
+          <span class="manual-info-value manual-info-dev">
+            <img src="assets/logo-kodaee.png" alt="Kodaee" class="manual-dev-logo">
+            Kodaee
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE NAV TOGGLE -->
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menu">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <span>Menu</span>
+  </button>
+
+  <!-- MAIN LAYOUT: SIDEBAR + CONTENT -->
+  <div class="manual-layout">
+    <div class="container">
+      <div class="manual-layout-inner">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="manual-sidebar" id="manualSidebar">
+          <div class="sidebar-header">
+            <span class="sidebar-title">Índice</span>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <!-- SEARCH BAR -->
+          <div class="manual-search">
+            <div class="search-input-wrapper">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <input type="text" class="manual-search-input" id="manualSearch" placeholder="Buscar no manual..." autocomplete="off">
+              <button class="search-clear" id="searchClear" aria-label="Limpar busca">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+
+          <nav class="sidebar-nav" id="sidebarNav">
+            <a href="#requisitos" class="sidebar-link active" data-section="requisitos">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Requisitos do Sistema
+            </a>
+            <a href="#instalacao" class="sidebar-link" data-section="instalacao">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Instalação e Ativação
+            </a>
+            <a href="#funcionalidades" class="sidebar-link" data-section="funcionalidades">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Funcionalidades do App
+            </a>
+            <a href="#atualizar" class="sidebar-link" data-section="atualizar">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              Atualizar o Sistema
+            </a>
+            <a href="#personalizar" class="sidebar-link" data-section="personalizar">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+              Personalizar
+            </a>
+            <a href="#exportar-importar" class="sidebar-link" data-section="exportar-importar">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+              Exportar e Importar
+            </a>
+            <a href="#backup" class="sidebar-link" data-section="backup">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+              Backup
+            </a>
+            <a href="#sincronizar" class="sidebar-link" data-section="sincronizar">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/></svg>
+              Sincronizar via Google Drive
+            </a>
+            <a href="#faq" class="sidebar-link" data-section="faq">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Perguntas Frequentes
+            </a>
+            <a href="#suporte" class="sidebar-link" data-section="suporte">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Suporte Técnico
+            </a>
+          </nav>
+        </aside>
+
+        <!-- SIDEBAR OVERLAY (mobile) -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- RIGHT CONTENT -->
+        <main class="manual-content">
+
+          <!-- SECTION 1: REQUISITOS -->
+          <section class="manual-card" id="requisitos">
+            <div class="section-header">
+              <span class="section-number">1</span>
+              <h2>Requisitos do Sistema (Windows)</h2>
+            </div>
+            <p>Antes de começar, verifique se o seu computador atende aos requisitos mínimos para um bom desempenho:</p>
+            <div class="requirements-table">
+              <div class="req-row req-header">
+                <div class="req-col">Componente</div>
+                <div class="req-col">Requisito Mínimo</div>
+                <div class="req-col">Recomendado</div>
+              </div>
+              <div class="req-row">
+                <div class="req-col req-label">Sistema Operacional</div>
+                <div class="req-col">Windows 10 (64 bits)</div>
+                <div class="req-col req-recommended">Windows 11</div>
+              </div>
+              <div class="req-row">
+                <div class="req-col req-label">Processador</div>
+                <div class="req-col">Intel i3 ou equivalente</div>
+                <div class="req-col req-recommended">Intel i5 ou superior</div>
+              </div>
+              <div class="req-row">
+                <div class="req-col req-label">Memória RAM</div>
+                <div class="req-col">4 GB</div>
+                <div class="req-col req-recommended">8 GB</div>
+              </div>
+              <div class="req-row">
+                <div class="req-col req-label">Espaço em Disco</div>
+                <div class="req-col">500 MB livres</div>
+                <div class="req-col req-recommended">1 GB livre</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 2: INSTALAÇÃO E ATIVAÇÃO -->
+          <section class="manual-card" id="instalacao">
+            <div class="section-header">
+              <span class="section-number">2</span>
+              <h2>Instalação e Ativação</h2>
+            </div>
+
+            <h3>Guia de Instalação no Windows</h3>
+            <p>Siga os passos abaixo para instalar o Precifica Gestor:</p>
+
+            <div class="install-steps">
+              <div class="install-step">
+                <div class="install-step-header">
+                  <span class="install-step-number">1</span>
+                  <h4>Baixe o Instalador</h4>
+                </div>
+                <p>Após a compra do produto, clique no link de download que você recebeu e seu download irá iniciar automaticamente.</p>
+                <div class="browser-mockup">
+                  <div class="browser-toolbar">
+                    <!-- Address bar -->
+                    <div class="browser-address">
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#999"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.657-1.343-3-3-3S6 9.343 6 11s1.343 3 3 3h6c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3"/></svg>
+                      <span>kodaee.com/precifica-gestor/download</span>
+                    </div>
+                    <!-- Right icons -->
+                    <div class="browser-icons">
+                      <div class="browser-icon">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#666"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                      </div>
+                      <!-- Download button with ring -->
+                      <div class="browser-download-btn">
+                        <svg class="browser-download-ring" width="32" height="32" viewBox="0 0 32 32">
+                          <circle cx="16" cy="16" r="13" fill="none" stroke="#e5e7eb" stroke-width="2.5"/>
+                          <circle cx="16" cy="16" r="13" fill="none" stroke="#5b3dc9" stroke-width="2.5" stroke-dasharray="81.68" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 16 16)"/>
+                        </svg>
+                        <svg class="browser-download-arrow" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#5b3dc9"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+                      </div>
+                      <div class="browser-icon">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#666"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Download modal positioned under arrow -->
+                  <div class="browser-download-modal">
+                    <div class="browser-download-modal-title">Histórico de downloads recentes</div>
+                    <div class="browser-download-file">
+                      <div class="browser-download-file-icon">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#5b3dc9"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                      </div>
+                      <div class="browser-download-file-info">
+                        <span class="browser-download-file-name">Precifica-Gestor-Setup.exe</span>
+                        <span class="browser-download-file-size">24.5 MB</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="install-step">
+                <div class="install-step-header">
+                  <span class="install-step-number">2</span>
+                  <h4>Execute o Arquivo</h4>
+                </div>
+                <p>Localize o arquivo <strong>Precifica-Gestor-Setup.exe</strong> na sua pasta de Downloads e dê um clique duplo.</p>
+                <div class="win-explorer">
+                  <div class="win-titlebar">
+                    <div class="win-titlebar-left">
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="#0078d4"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>
+                      <span>Downloads</span>
+                    </div>
+                    <div class="win-titlebar-buttons">
+                      <div class="win-btn win-btn-min">
+                        <svg width="10" height="1" viewBox="0 0 10 1"><rect width="10" height="1" fill="#666"/></svg>
+                      </div>
+                      <div class="win-btn win-btn-max">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#666" stroke-width="1"><rect x="0.5" y="0.5" width="9" height="9"/></svg>
+                      </div>
+                      <div class="win-btn win-btn-close">
+                        <svg width="10" height="10" viewBox="0 0 10 10" stroke="#666" stroke-width="1.2"><line x1="1" y1="1" x2="9" y2="9"/><line x1="9" y1="1" x2="1" y2="9"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="win-toolbar">
+                    <div class="win-nav-arrows">
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#ccc" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+                    </div>
+                    <div class="win-address-bar">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="#f0c040" stroke="#d4a017" stroke-width="1"><path d="M3 4v16h18V7h-9l-2-3H3z"/></svg>
+                      <span class="win-path-sep">›</span>
+                      <span>Este Computador</span>
+                      <span class="win-path-sep">›</span>
+                      <span>Downloads</span>
+                    </div>
+                    <div class="win-search-bar">
+                      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+                      <span>Pesquisar em Downloads</span>
+                    </div>
+                  </div>
+                  <div class="win-body">
+                    <div class="win-sidebar">
+                      <div class="win-sidebar-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#f0c040" stroke="#d4a017" stroke-width="0.5"><path d="M3 4v16h18V7h-9l-2-3H3z"/></svg>
+                        <span>Área de Trabalho</span>
+                      </div>
+                      <div class="win-sidebar-item active">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#0078d4" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+                        <span>Downloads</span>
+                      </div>
+                      <div class="win-sidebar-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#f0c040" stroke="#d4a017" stroke-width="0.5"><path d="M3 4v16h18V7h-9l-2-3H3z"/></svg>
+                        <span>Documentos</span>
+                      </div>
+                    </div>
+                    <div class="win-content">
+                      <div class="win-file selected">
+                        <div class="win-file-icon">
+                          <img src="assets/logo.png" alt="Precifica Gestor icon">
+                        </div>
+                        <span class="win-file-name">Precifica-Gestor-Setup.exe</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="win-statusbar">
+                    <span>1 item</span>
+                    <span>24,5 MB</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="install-step">
+                <div class="install-step-header">
+                  <span class="install-step-number">3</span>
+                  <h4>Alerta de Segurança do Windows</h4>
+                </div>
+                <p>Em alguns casos, o Windows pode ter dificuldade para ler o certificado do instalador e exibir um aviso de segurança. Não se preocupe, é seguro continuar. Clique em <strong>Mais Informações</strong> e depois em <strong>Executar assim mesmo</strong>.</p>
+                <div class="smartscreen-images">
+                  <img src="assets/precifica_manual/windowsmaisinfo.png" alt="Tela de proteção do Windows SmartScreen - Mais Informações">
+                  <img src="assets/precifica_manual/executarmesmoassim.png" alt="Tela de proteção do Windows SmartScreen - Executar assim mesmo">
+                </div>
+              </div>
+
+              <div class="install-step">
+                <div class="install-step-header">
+                  <span class="install-step-number">4</span>
+                  <h4>Assistente de Instalação</h4>
+                </div>
+                <p>Siga as etapas do instalador conforme as imagens abaixo. Recomendamos manter as opções padrão.</p>
+                <div class="carousel" id="installerCarousel">
+                  <button class="carousel-arrow carousel-prev" onclick="carouselNav('installerCarousel', -1)">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                  </button>
+                  <div class="carousel-track">
+                    <div class="carousel-slide active" data-step="1">
+                      <img src="assets/precifica_manual/termo.png" alt="Termos de Licença">
+                      <span class="carousel-label">1. Aceite os Termos de Licença</span>
+                    </div>
+                    <div class="carousel-slide" data-step="2">
+                      <img src="assets/precifica_manual/usertoinstall.png" alt="Selecionar usuário para instalação">
+                      <span class="carousel-label">2. Selecione o usuário</span>
+                    </div>
+                    <div class="carousel-slide" data-step="3">
+                      <img src="assets/precifica_manual/wheretoinstall.png" alt="Escolher pasta de destino">
+                      <span class="carousel-label">3. Escolha a pasta de destino</span>
+                    </div>
+                    <div class="carousel-slide" data-step="4">
+                      <img src="assets/precifica_manual/installprogress.png" alt="Progresso da instalação">
+                      <span class="carousel-label">4. Aguarde a instalação</span>
+                    </div>
+                    <div class="carousel-slide" data-step="5">
+                      <img src="assets/precifica_manual/executesoftware.png" alt="Executar o software">
+                      <span class="carousel-label">5. Clique em Concluir</span>
+                    </div>
+                  </div>
+                  <button class="carousel-arrow carousel-next" onclick="carouselNav('installerCarousel', 1)">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                  <div class="carousel-dots" id="installerCarouselDots">
+                    <button class="carousel-dot active" onclick="carouselGoTo('installerCarousel', 0)">1</button>
+                    <button class="carousel-dot" onclick="carouselGoTo('installerCarousel', 1)">2</button>
+                    <button class="carousel-dot" onclick="carouselGoTo('installerCarousel', 2)">3</button>
+                    <button class="carousel-dot" onclick="carouselGoTo('installerCarousel', 3)">4</button>
+                    <button class="carousel-dot" onclick="carouselGoTo('installerCarousel', 4)">5</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <h3>Ativação da Licença</h3>
+              <p>Na primeira vez que abrir o sistema, você precisará ativar sua licença:</p>
+              <div class="install-steps">
+                <div class="install-step">
+                  <div class="install-step-header">
+                    <span class="install-step-number">1</span>
+                    <h4>Procure sua licença</h4>
+                  </div>
+                  <p>No e-mail de compra, você encontrará sua chave de ativação com o formato <strong>PREC-****-****-****</strong>. Copie e cole na caixa de licença do sistema.</p>
+                </div>
+                <div class="install-step">
+                  <div class="install-step-header">
+                    <span class="install-step-number">2</span>
+                    <h4>Ative sua licença</h4>
+                  </div>
+                  <p>Clique em <strong>Ativar</strong>. Lembrando que a licença é válida apenas para um computador.</p>
+                  <img src="assets/precifica_manual/ativa.png" alt="Tela de ativação da licença" style="max-width: 650px; width: 100%; border-radius: 8px; margin: 12px auto; display: block; box-shadow: 0 2px 10px rgba(0,0,0,0.12);">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 3: FUNCIONALIDADES -->
+          <section class="manual-card" id="funcionalidades">
+            <div class="section-header">
+              <span class="section-number">3</span>
+              <h2>Funcionalidades do App</h2>
+            </div>
+            <p>Veja como utilizar as principais funcionalidades do Precifica Gestor no vídeo abaixo:</p>
+            <div class="video-container" id="videoContainerFuncionalidades">
+              <div class="video-banner" data-video="funcionalidades">
+                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <span class="video-banner-title">Cadastrando um produto do zero</span>
+                <div class="video-play-btn">
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <video src="assets/precifica_manual/preficiacommusica.mp4" class="video-player"></video>
+              <div class="vc-pause-overlay"><svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="video-controls">
+                <button class="vc-btn vc-play-pause" title="Play/Pause"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path class="vc-icon-play" d="M8 5v14l11-7z"/><path class="vc-icon-pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" style="display:none"/></svg></button>
+                <button class="vc-btn vc-stop" title="Parar"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+                <span class="vc-time">0:00 / 0:00</span>
+                <div class="vc-progress"><div class="vc-progress-filled"></div></div>
+                <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 4: ATUALIZAR -->
+          <section class="manual-card" id="atualizar">
+            <div class="section-header">
+              <span class="section-number">4</span>
+              <h2>Como Atualizar o Sistema</h2>
+            </div>
+            <p>Cada vez que o sistema é aberto, ele verifica se há novas atualizações, por isso é importante fechar o sistema quando finalizar o seu uso. Caso deseje, também é possível atualizar o sistema manualmente:</p>
+            <ol class="manual-ordered-list">
+              <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
+              <li>Vá na aba <strong>Atualizar</strong>.</li>
+              <li>Clique em <strong>Verificar atualizações</strong>.</li>
+              <li>O sistema irá procurar por novas atualizações, caso encontre irá baixar automaticamente. Após finalizado clique no botão <strong>Fechar e Atualizar</strong>.</li>
+              <li>O sistema será fechado e você verá o instalador do Windows. Ao finalizar a instalação o sistema abrirá automaticamente.</li>
+            </ol>
+          </section>
+
+          <!-- SECTION 5: PERSONALIZAR -->
+          <section class="manual-card" id="personalizar">
+            <div class="section-header">
+              <span class="section-number">5</span>
+              <h2>Como Personalizar</h2>
+            </div>
+            <p>É possível alterar o logo do sistema para o logo da sua empresa, assim como alterar as cores primárias do sistema conforme seu agrado.</p>
+            <ol class="manual-ordered-list">
+              <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
+              <li>Vá na aba <strong>Personalizar</strong>.</li>
+              <li>É possível alterar o logo do app para o logo da sua empresa. Use a ação <strong>Clique ou arraste</strong> para enviar o logo da sua empresa.</li>
+              <li>Selecione o logo na sua máquina.</li>
+              <li>Automaticamente o sistema irá alterar a cor principal baseada nas cores primárias do seu logo. Caso não seja do seu agrado, é possível alterar a cor primária clicando na caixa da cor na sessão <strong>Cor Principal</strong>.</li>
+              <li>Caso queira retornar para o logo ou cores padrões, clique em <strong>Remover logo</strong> ou/e <strong>Restaurar padrão</strong>.</li>
+            </ol>
+            <div class="video-container" id="videoContainerPersonalizar">
+              <div class="video-banner" data-video="personalizar">
+                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <span class="video-banner-title">Como personalizar seu sistema</span>
+                <div class="video-play-btn">
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <video src="assets/precifica_manual/personalizar.mov" class="video-player"></video>
+              <div class="vc-pause-overlay"><svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="video-controls">
+                <button class="vc-btn vc-play-pause" title="Play/Pause"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path class="vc-icon-play" d="M8 5v14l11-7z"/><path class="vc-icon-pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" style="display:none"/></svg></button>
+                <button class="vc-btn vc-stop" title="Parar"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+                <span class="vc-time">0:00 / 0:00</span>
+                <div class="vc-progress"><div class="vc-progress-filled"></div></div>
+                <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+              </div>
+            </div>
+
+            <div class="video-container" id="videoContainerDarkmode">
+              <div class="video-banner" data-video="darkmode">
+                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <span class="video-banner-title">Modo Escuro em ação</span>
+                <div class="video-play-btn">
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <video src="assets/precifica_manual/darkmode.mov" class="video-player"></video>
+              <div class="vc-pause-overlay"><svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="video-controls">
+                <button class="vc-btn vc-play-pause" title="Play/Pause"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path class="vc-icon-play" d="M8 5v14l11-7z"/><path class="vc-icon-pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" style="display:none"/></svg></button>
+                <button class="vc-btn vc-stop" title="Parar"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+                <span class="vc-time">0:00 / 0:00</span>
+                <div class="vc-progress"><div class="vc-progress-filled"></div></div>
+                <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 6: EXPORTAR/IMPORTAR -->
+          <section class="manual-card" id="exportar-importar">
+            <div class="section-header">
+              <span class="section-number">6</span>
+              <h2>Como Exportar e Importar os Dados</h2>
+            </div>
+            <p>Caso você queira compartilhar offline seus dados ou manter uma cópia dos mesmos na sua máquina ou qualquer outro lugar, você tem a opção de exportar e importar seus dados.</p>
+
+            <h4 class="sub-subsection-title">Como exportar</h4>
+            <ol class="manual-ordered-list">
+              <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
+              <li>Clique em <strong>Exportar</strong>. Um arquivo chamado <strong>dados.json</strong> será exportado.</li>
+            </ol>
+
+            <h4 class="sub-subsection-title">Como importar</h4>
+            <ol class="manual-ordered-list">
+              <li>Clique em <strong>Importar</strong> e escolha o arquivo <strong>.json</strong> exportado anteriormente.</li>
+            </ol>
+
+            <div class="video-container" id="videoContainerImportExport">
+              <div class="video-banner" data-video="importexport">
+                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <span class="video-banner-title">Como exportar e importar dados</span>
+                <div class="video-play-btn">
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <video src="assets/precifica_manual/importexport.mov" class="video-player"></video>
+              <div class="vc-pause-overlay"><svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="video-controls">
+                <button class="vc-btn vc-play-pause" title="Play/Pause"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path class="vc-icon-play" d="M8 5v14l11-7z"/><path class="vc-icon-pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" style="display:none"/></svg></button>
+                <button class="vc-btn vc-stop" title="Parar"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+                <span class="vc-time">0:00 / 0:00</span>
+                <div class="vc-progress"><div class="vc-progress-filled"></div></div>
+                <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 7: BACKUP -->
+          <section class="manual-card" id="backup">
+            <div class="section-header">
+              <span class="section-number">7</span>
+              <h2>Backup</h2>
+            </div>
+            <p>A cada semana um backup automático é realizado pelo sistema para garantir que seus dados estão salvos. Também é possível realizar o backup manualmente, assim como recuperar o backup a qualquer momento.</p>
+
+            <h4 class="sub-subsection-title">Como realizar o backup manualmente</h4>
+            <ol class="manual-ordered-list">
+              <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
+              <li>Na aba <strong>Dados</strong> clique em <strong>Fazer Backup</strong>.</li>
+              <li>Você verá uma barra de progresso. Aguarde a barra finalizar e você verá a mensagem <strong>Backup realizado com sucesso!</strong></li>
+              <li>A data e horário do último backup será alterado para a data e horário atual.</li>
+            </ol>
+
+            <h4 class="sub-subsection-title">Como recuperar o backup</h4>
+            <div class="manual-warning">
+              <strong>Atenção:</strong> Tome bastante cuidado com essa ação. Recuperar o seu backup significa substituir os dados atuais pelos dados que foram salvos no backup na data em que foi realizado. Em outras palavras, seus dados atuais serão apagados e substituídos pelo backup.
+            </div>
+            <ol class="manual-ordered-list">
+              <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
+              <li>Na aba <strong>Dados</strong> confirme o horário e data do último backup antes de continuar. Seus dados serão substituídos para os dados presentes na data e horário do último backup.</li>
+              <li>Na aba <strong>Dados</strong> clique em <strong>Recuperar Backup</strong>.</li>
+              <li>Você verá uma barra de progresso. Aguarde a barra finalizar e você verá a mensagem <strong>Recuperação finalizada com sucesso!</strong></li>
+            </ol>
+
+            <div class="video-container" id="videoContainerBackup">
+              <div class="video-banner" data-video="backup">
+                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <span class="video-banner-title">Como fazer e recuperar backup</span>
+                <div class="video-play-btn">
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <video src="assets/precifica_manual/backup.mov" class="video-player"></video>
+              <div class="vc-pause-overlay"><svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="video-controls">
+                <button class="vc-btn vc-play-pause" title="Play/Pause"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path class="vc-icon-play" d="M8 5v14l11-7z"/><path class="vc-icon-pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" style="display:none"/></svg></button>
+                <button class="vc-btn vc-stop" title="Parar"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+                <span class="vc-time">0:00 / 0:00</span>
+                <div class="vc-progress"><div class="vc-progress-filled"></div></div>
+                <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 8: SINCRONIZAR -->
+          <section class="manual-card" id="sincronizar">
+            <div class="section-header">
+              <span class="section-number">8</span>
+              <h2>Sincronizar via Google Drive</h2>
+            </div>
+            <p>Tenha uma conta no Google Drive e tenha o Google Drive instalado na sua máquina. Para isso baixe o Google Drive para computador.</p>
+            <ol class="manual-ordered-list">
+              <li>Após ter instalado o Google Drive, crie uma pasta específica para guardar os dados do Precifica Gestor. Você pode chamá-la de <strong>precifica_gestor</strong> ou qualquer nome que preferir.</li>
+              <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
+              <li>Vá na aba <strong>Sincronizar</strong>.</li>
+              <li>Clique em <strong>Escolher Pasta</strong> e selecione a pasta criada anteriormente dentro do seu Google Drive.</li>
+              <li>Pronto! Agora seus dados serão salvos nesta pasta.</li>
+            </ol>
+          </section>
+
+          <!-- SECTION 10: FAQ -->
+          <section class="manual-card" id="faq">
+            <div class="section-header">
+              <span class="section-number">9</span>
+              <h2>Perguntas Frequentes (FAQ)</h2>
+            </div>
+            <div class="faq-list">
+              <details class="faq-item" open>
+                <summary>O programa não abre após a instalação. O que fazer?</summary>
+                <p>Tente clicar com o botão direito no ícone e selecionar <strong>"Executar como Administrador"</strong>. Verifique também se seu antivírus não bloqueou o arquivo por engano.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Onde meus arquivos ficam salvos?</summary>
+                <p>Por padrão, os arquivos são salvos na pasta <strong>C:\Users\{usuario}\AppData\Local\Programs\precifica-gestor</strong>.</p>
+              </details>
+            </div>
+          </section>
+
+          <!-- SECTION 11: SUPORTE -->
+          <section class="manual-card manual-card-support" id="suporte">
+            <div class="section-header">
+              <span class="section-number">10</span>
+              <h2>Suporte Técnico</h2>
+            </div>
+            <p>Se precisar de ajuda extra, nossa equipe está à disposição:</p>
+            <div class="support-contact">
+              <div class="support-icon">
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <span class="support-label">E-mail de Suporte</span>
+                <a href="mailto:suporte@kodaee.com" class="support-email">suporte@kodaee.com</a>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-brand">
+          <img src="assets/logo-kodaee.png" alt="Kodaee" class="footer-logo">
+          <span>Desenvolvido por <strong>Kodaee</strong></span>
+        </a>
+        <p class="footer-copy">
+          <a href="mailto:suporte@kodaee.com">suporte@kodaee.com</a>
+          <br>&copy; 2026 Kodaee. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        // Close mobile sidebar
+        document.getElementById('manualSidebar').classList.remove('open');
+        document.getElementById('sidebarOverlay').classList.remove('open');
+        document.body.classList.remove('sidebar-open');
+      });
+    });
+
+    // Active section tracking
+    const sections = document.querySelectorAll('.manual-card[id]');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sidebarLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.sidebar-link[data-section="${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Mobile sidebar toggle
+    const sidebar = document.getElementById('manualSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const closeBtn = document.getElementById('sidebarClose');
+
+    function openSidebar() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      document.body.classList.add('sidebar-open');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    toggleBtn.addEventListener('click', openSidebar);
+    closeBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    // Search functionality
+    const searchInput = document.getElementById('manualSearch');
+    const searchClear = document.getElementById('searchClear');
+    const searchResultsContainer = document.getElementById('searchResults');
+    const sidebarNavEl = document.getElementById('sidebarNav');
+
+    // Build searchable index from manual content
+    function buildSearchIndex() {
+      const index = [];
+      document.querySelectorAll('.manual-content .manual-card[id]').forEach(card => {
+        const sectionId = card.id;
+        const headerEl = card.querySelector('.section-header h2');
+        const sectionName = headerEl ? headerEl.textContent.trim() : '';
+
+        // Collect all text blocks within the section
+        const textElements = card.querySelectorAll('p, li, h3, h4, summary, .manual-tip, .manual-warning');
+        textElements.forEach(el => {
+          const text = el.textContent.trim();
+          if (text.length > 10) {
+            index.push({ sectionId, sectionName, text, element: el });
+          }
+        });
+      });
+      return index;
+    }
+
+    const searchIndex = buildSearchIndex();
+
+    function highlightText(text, query) {
+      const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${escaped})`, 'gi');
+      return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    function truncateAround(text, query, maxLen) {
+      const lowerText = text.toLowerCase();
+      const lowerQuery = query.toLowerCase();
+      const idx = lowerText.indexOf(lowerQuery);
+      if (idx === -1) return text.substring(0, maxLen) + '...';
+
+      const start = Math.max(0, idx - 40);
+      const end = Math.min(text.length, idx + query.length + 60);
+      let snippet = '';
+      if (start > 0) snippet += '...';
+      snippet += text.substring(start, end);
+      if (end < text.length) snippet += '...';
+      return snippet;
+    }
+
+    function performSearch(query) {
+      if (!query || query.length < 2) {
+        searchResultsContainer.classList.remove('visible');
+        searchResultsContainer.innerHTML = '';
+        sidebarNavEl.style.display = '';
+        return;
+      }
+
+      const lowerQuery = query.toLowerCase();
+      const results = [];
+      const seenSections = new Map();
+
+      searchIndex.forEach(item => {
+        if (item.text.toLowerCase().includes(lowerQuery)) {
+          // Limit to 3 results per section
+          const count = seenSections.get(item.sectionId) || 0;
+          if (count < 3) {
+            results.push(item);
+            seenSections.set(item.sectionId, count + 1);
+          }
+        }
+      });
+
+      if (results.length === 0) {
+        searchResultsContainer.innerHTML = '<div class="search-no-results">Nenhum resultado encontrado</div>';
+        searchResultsContainer.classList.add('visible');
+        sidebarNavEl.style.display = 'none';
+        return;
+      }
+
+      const maxResults = 12;
+      const shown = results.slice(0, maxResults);
+
+      let html = `<div class="search-results-count">${results.length} resultado${results.length !== 1 ? 's' : ''} encontrado${results.length !== 1 ? 's' : ''}</div>`;
+
+      shown.forEach(item => {
+        const snippet = truncateAround(item.text, query, 120);
+        const highlighted = highlightText(snippet, query);
+        html += `
+          <div class="search-result-item" data-section="${item.sectionId}">
+            <span class="search-result-section">${item.sectionName}</span>
+            <span class="search-result-text">${highlighted}</span>
+          </div>`;
+      });
+
+      searchResultsContainer.innerHTML = html;
+      searchResultsContainer.classList.add('visible');
+      sidebarNavEl.style.display = 'none';
+
+      // Click handlers for results
+      searchResultsContainer.querySelectorAll('.search-result-item').forEach(el => {
+        el.addEventListener('click', () => {
+          const sectionId = el.dataset.section;
+          const target = document.getElementById(sectionId);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            closeSidebar();
+          }
+        });
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value;
+      searchClear.classList.toggle('visible', val.length > 0);
+      performSearch(val);
+    });
+
+    function clearSearch() {
+      searchInput.value = '';
+      searchClear.classList.remove('visible');
+      searchResultsContainer.classList.remove('visible');
+      searchResultsContainer.innerHTML = '';
+      sidebarNavEl.style.display = '';
+    }
+
+    searchClear.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      clearSearch();
+      searchInput.focus();
+    });
+
+    // Click outside search to close results
+    document.addEventListener('click', (e) => {
+      const searchBox = document.querySelector('.manual-search');
+      if (!searchBox.contains(e.target)) {
+        clearSearch();
+      }
+    });
+
+    // Video players
+    function formatTime(s) {
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    function showBanner(banner) {
+      banner.style.display = 'flex';
+      banner.style.pointerEvents = 'auto';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { banner.style.opacity = '1'; });
+      });
+    }
+
+    function hideBanner(banner) {
+      banner.style.opacity = '0';
+      banner.style.pointerEvents = 'none';
+      setTimeout(() => { banner.style.display = 'none'; }, 500);
+    }
+
+    function updatePlayIcon(container, playing) {
+      const playIcon = container.querySelector('.vc-icon-play');
+      const pauseIcon = container.querySelector('.vc-icon-pause');
+      playIcon.style.display = playing ? 'none' : '';
+      pauseIcon.style.display = playing ? '' : 'none';
+    }
+
+    document.querySelectorAll('.video-container').forEach(container => {
+      const banner = container.querySelector('.video-banner');
+      const video = container.querySelector('video');
+      const controls = container.querySelector('.video-controls');
+      const playPauseBtn = container.querySelector('.vc-play-pause');
+      const stopBtn = container.querySelector('.vc-stop');
+      const timeDisplay = container.querySelector('.vc-time');
+      const progress = container.querySelector('.vc-progress');
+      const progressFilled = container.querySelector('.vc-progress-filled');
+      const fullscreenBtn = container.querySelector('.vc-fullscreen');
+      const pauseOverlay = container.querySelector('.vc-pause-overlay');
+
+      // Banner click → play
+      banner.addEventListener('click', () => {
+        hideBanner(banner);
+        controls.classList.add('visible');
+        video.play();
+      });
+
+      // Play/Pause
+      playPauseBtn.addEventListener('click', () => {
+        if (video.paused) { video.play(); } else { video.pause(); }
+      });
+
+      video.addEventListener('play', () => {
+        updatePlayIcon(container, true);
+        pauseOverlay.classList.remove('visible');
+      });
+      video.addEventListener('pause', () => {
+        updatePlayIcon(container, false);
+        if (!video.ended) { pauseOverlay.classList.add('visible'); }
+      });
+
+      // Stop → reset to banner
+      stopBtn.addEventListener('click', () => {
+        video.pause();
+        video.currentTime = 0;
+        controls.classList.remove('visible');
+        pauseOverlay.classList.remove('visible');
+        updatePlayIcon(container, false);
+        showBanner(banner);
+      });
+
+      // Time update → progress bar + time display
+      video.addEventListener('timeupdate', () => {
+        const pct = (video.currentTime / video.duration) * 100 || 0;
+        progressFilled.style.width = pct + '%';
+        timeDisplay.textContent = formatTime(video.currentTime) + ' / ' + formatTime(video.duration || 0);
+      });
+
+      // Click on progress bar → seek
+      progress.addEventListener('click', (e) => {
+        const rect = progress.getBoundingClientRect();
+        const pct = (e.clientX - rect.left) / rect.width;
+        video.currentTime = pct * video.duration;
+      });
+
+      // Click on video → play/pause
+      video.addEventListener('click', () => {
+        if (video.paused) { video.play(); } else { video.pause(); }
+      });
+
+      // Click on pause overlay → resume
+      pauseOverlay.addEventListener('click', () => {
+        video.play();
+      });
+
+      // Fullscreen toggle
+      fullscreenBtn.addEventListener('click', () => {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          if (document.exitFullscreen) { document.exitFullscreen(); }
+          else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+        } else {
+          if (container.requestFullscreen) { container.requestFullscreen(); }
+          else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); }
+        }
+      });
+
+      // Video ended → show banner again
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        controls.classList.remove('visible');
+        pauseOverlay.classList.remove('visible');
+        updatePlayIcon(container, false);
+        showBanner(banner);
+      });
+    });
+  </script>
+  <script>
+    function carouselNav(id, dir) {
+      const carousel = document.getElementById(id);
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const current = carousel.querySelector('.carousel-slide.active');
+      let idx = Array.from(slides).indexOf(current);
+      idx += dir;
+      if (idx < 0) idx = slides.length - 1;
+      if (idx >= slides.length) idx = 0;
+      carouselGoTo(id, idx);
+    }
+
+    function carouselGoTo(id, idx) {
+      const carousel = document.getElementById(id);
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[idx].classList.add('active');
+      dots[idx].classList.add('active');
+    }
+  </script>
+</body>
+</html>
