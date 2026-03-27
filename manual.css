@@ -335,8 +335,8 @@
 }
 
 .req-header .req-col {
-  background: var(--text);
-  color: #fff;
+  background: var(--card-alt);
+  color: var(--text);
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -345,7 +345,7 @@
 
 .req-col {
   padding: 14px 20px;
-  background: var(--card-alt);
+  background: #fff;
   font-size: 0.85rem;
   color: var(--text-muted);
 }
@@ -605,8 +605,7 @@ kbd {
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   background: #fff;
-  padding-bottom: 80px;
-  overflow: hidden;
+  padding-bottom: 100px;
 }
 
 .browser-toolbar {
@@ -678,7 +677,7 @@ kbd {
   position: absolute;
   right: 12px;
   top: 44px;
-  width: 260px;
+  width: min(260px, calc(100% - 24px));
   background: #fff;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 10px;
@@ -1033,6 +1032,7 @@ kbd {
 }
 
 @media (max-width: 600px) {
+  .browser-mockup { padding-bottom: 120px; }
   .win-sidebar { display: none; }
   .win-search-bar span { display: none; }
   .win-explorer { max-width: 100%; }
@@ -1474,7 +1474,9 @@ kbd {
 }
 
 @media (max-width: 768px) {
-  .manual-hero { padding: 100px 0 16px; }
+  .header-inner { flex-wrap: nowrap; justify-content: space-between; }
+  .logo-group { width: auto; }
+  .manual-hero { padding: 100px 0 8px; }
 
   .manual-hero-content {
     padding: 36px 24px;
@@ -1521,10 +1523,14 @@ kbd {
   }
 
   .req-label {
-    background: var(--text);
-    color: #fff;
+    background: var(--card-alt);
+    color: var(--text);
     font-weight: 700;
     font-size: 0.8rem;
+  }
+
+  .req-col:not(.req-label) {
+    background: #fff;
   }
 
   .install-step p,

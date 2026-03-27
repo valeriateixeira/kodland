@@ -1106,7 +1106,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .hero { padding: 100px 0 16px; }
+  .hero { padding: 120px 0 8px; }
 
   .hero-content {
     grid-template-columns: 1fr;
@@ -1176,7 +1176,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .cta-features {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .footer-inner {
