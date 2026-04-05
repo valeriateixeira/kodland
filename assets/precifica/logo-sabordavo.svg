@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="95" fill="#2c3e50"/>
+  <circle cx="100" cy="100" r="82" fill="#ecf0f1" stroke="#2c3e50" stroke-width="3"/>
+  <text x="100" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-style="italic" font-weight="bold" fill="#2c3e50">Sabor</text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" letter-spacing="4" fill="#2c3e50">DA VÓ</text>
+</svg>

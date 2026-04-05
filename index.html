@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kodaee - Software que facilita sua rotina</title>
   <meta name="description" content="A Kodaee cria software prático para quem precisa de ferramentas simples que funcionam. Do negócio ao uso pessoal, sem complicação.">
-  <meta name="keywords" content="Kodaee, software, aplicativos, ferramentas, precificação, gestão, produtividade">
+  <meta name="keywords" content="Kodaee, software, aplicativos, ferramentas, Ceintro, gestão, produtividade">
   <meta name="google-site-verification" content="Rf4N8eSs5ReoQbQ1ywu6VXa-GkCHYGlrph3yNA324PM" />
   <link rel="canonical" href="https://kodaee.com/">
 
@@ -35,8 +35,8 @@
   {
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
-    "name": "Precifica Gestor",
-    "url": "https://kodaee.com/precifica.html",
+    "name": "Ceintro",
+    "url": "https://kodaee.com/ceintro.html",
     "description": "Software de precificação e gestão para empreendedores de alimentação"
   },
   {
@@ -44,7 +44,7 @@
     "@type": "SiteNavigationElement",
     "name": "Manual",
     "url": "https://kodaee.com/manual.html",
-    "description": "Manual do Precifica Gestor"
+    "description": "Manual do Ceintro"
   }]
   </script>
 
@@ -500,147 +500,213 @@
       margin-top: 16px;
     }
 
-    .product-main {
-      background: var(--white);
+    /* CEINTRO BANNER */
+    .ceintro-banner {
+      background: linear-gradient(135deg, #074da3, #0960cb, #3b82f6);
       border-radius: var(--radius-lg);
+      padding: 64px 56px;
+      position: relative;
       overflow: hidden;
     }
 
-    .product-header {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      padding: 40px 48px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .ceintro-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      height: 100%;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
     }
 
-    .product-header-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .ceintro-banner-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: start;
     }
 
-    .product-header-logo {
+    .ceintro-logo {
       width: 56px;
       height: 56px;
       border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
     }
 
-    .product-header-info h3 {
-      font-size: 1.4rem;
+    .ceintro-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 16px;
     }
 
-    .product-header-info p {
-      font-size: 0.85rem;
-      opacity: 0.8;
+    .ceintro-highlight {
+      color: #93c5fd;
     }
 
-    .product-header-badge {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 8px 18px;
-      border-radius: var(--radius-pill);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .product-body {
-      padding: 40px 48px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .product-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
+    .ceintro-subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
       line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    .ceintro-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #0960cb;
+      padding: 14px 32px;
+      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .ceintro-cta-btn:hover {
+      background: #eff6ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .ceintro-plan-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ceintro-plan-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .ceintro-plan-desc {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
       margin-bottom: 24px;
     }
 
-    .product-features {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
+    .ceintro-price-old {
+      color: #475569;
+      text-decoration: line-through;
+      font-size: 0.9rem;
     }
 
-    .product-features li {
+    .ceintro-price {
+      display: flex;
+      align-items: flex-start;
+      gap: 2px;
+      margin: 4px 0 4px;
+    }
+
+    .ceintro-price-symbol {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 12px;
+    }
+
+    .ceintro-price-value {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1;
+    }
+
+    .ceintro-price-cents {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 10px;
+    }
+
+    .ceintro-price-lifetime {
+      background: #0960cb;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      align-self: flex-end;
+      margin-bottom: 8px;
+      margin-left: 4px;
+    }
+
+    .ceintro-price-info {
+      color: #475569;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .ceintro-saving {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #2d6a2e;
+      border-left: 3px solid #2d6a2e;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .ceintro-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      width: 100%;
+    }
+
+    .ceintro-features li {
       display: flex;
       align-items: center;
       gap: 10px;
       font-size: 0.85rem;
-      color: var(--text-muted);
-      padding: 7px 0;
+      color: #475569;
     }
 
-    .check-dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #f0ecfb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .ceintro-features li svg {
       flex-shrink: 0;
     }
 
-    .check-dot svg {
-      color: var(--primary);
-    }
-
-    .product-price-box {
-      background: var(--bg);
-      border-radius: var(--radius);
-      padding: 36px;
-      text-align: center;
-    }
-
-    .product-price-old {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      text-decoration: line-through;
-    }
-
-    .product-price-current {
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin: 4px 0;
-    }
-
-    .product-price-period {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-bottom: 24px;
-    }
-
-    .btn-main {
+    .ceintro-plan-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--text);
-      color: var(--white);
+      justify-content: center;
+      width: 100%;
+      background: #0960cb;
+      color: #fff;
       padding: 14px 32px;
       border-radius: var(--radius-pill);
-      font-size: 0.875rem;
+      font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
+      transition: all 0.25s;
     }
 
-    .btn-main:hover {
-      background: #222;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    .ceintro-plan-btn:hover {
+      background: #074da3;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(9, 96, 203, 0.3);
     }
 
     /* COMING SOON PRODUCTS */
@@ -803,17 +869,15 @@
 
       .sections-row { grid-template-columns: 1fr; }
 
-      .product-header { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
-      .product-header-left { flex-direction: column; align-items: center; }
-      .platform-tags { justify-content: center; }
-
-      .product-body { grid-template-columns: 1fr; padding: 28px 24px; }
-
       .about-values { flex-direction: column; }
 
       .section-card { padding: 32px 24px; }
 
       .stats-list-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+      .ceintro-banner { padding: 40px 24px; }
+      .ceintro-banner-content { grid-template-columns: 1fr; gap: 32px; }
+      .ceintro-title { font-size: 1.8rem; }
 
       .coming-soon-grid { grid-template-columns: 1fr; }
 
@@ -879,10 +943,10 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;">
             <div class="hero-product-float">
-              <img src="assets/logo.png" alt="Precifica Gestor">
+              <img src="assets/logo.png" alt="Ceintro">
               <div class="hero-product-float-info">
-                <h4>Precifica Gestor</h4>
-                <span>Precificação inteligente</span>
+                <h4>Ceintro</h4>
+                <span>Gestão completa para seu negócio de alimentação</span>
               </div>
             </div>
           </div>
@@ -932,47 +996,49 @@
 
       <!-- PRODUCT -->
       <div class="product-section" id="produtos">
-        <div class="product-main">
-          <div class="product-header">
-            <div class="product-header-left">
-              <img src="assets/logo.png" alt="Precifica Gestor" class="product-header-logo">
-              <div class="product-header-info">
-                <h3>Precifica Gestor</h3>
-                <p>Precificação inteligente para alimentação</p>
-                <div class="platform-tags" style="margin-top:8px;">
-                  <span class="platform-tag" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.557l7.357-1.002v7.1H3V5.557zm0 12.886l7.357 1.002v-7.1H3v6.098zM11.643 4.38L22 2.857v8.798h-10.357V4.38zm0 15.24L22 21.143v-8.798H11.643v7.275z"/></svg> Windows</span>
-                </div>
-              </div>
+        <div class="ceintro-banner">
+          <div class="ceintro-banner-content">
+            <div class="ceintro-banner-text">
+              <img src="assets/logo.png" alt="Ceintro" class="ceintro-logo">
+              <h2 class="ceintro-title">Tudo que seu negócio precisa para <span class="ceintro-highlight">crescer do zero</span></h2>
+              <p class="ceintro-subtitle">Precificação, estoque, gestão de pedidos, motoboy e relatórios completos. O software feito para quem está começando e quer profissionalizar seu negócio de alimentação.</p>
+              <a href="ceintro.html" class="ceintro-cta-btn">Conhecer o Ceintro &rarr;</a>
             </div>
-            <div class="product-header-badge">Disponível agora</div>
-          </div>
-          <div class="product-body">
-            <div>
-              <p class="product-desc">O software completo para precificação, controle de estoque e gestão de receitas. Feito para quem quer parar de perder dinheiro com preço errado.</p>
-              <ul class="product-features">
+            <div class="ceintro-plan-card">
+              <h3 class="ceintro-plan-name">Intro</h3>
+              <p class="ceintro-plan-desc">Ideal para MEIs começando a estruturar seu negócio.</p>
+              <span class="ceintro-price-old">R$ 97,00</span>
+              <div class="ceintro-price">
+                <span class="ceintro-price-symbol">R$</span>
+                <span class="ceintro-price-value">29</span>
+                <span class="ceintro-price-cents">,99</span>
+                <span class="ceintro-price-lifetime">vitalício</span>
+              </div>
+              <span class="ceintro-price-info">Pagamento único. Sem mensalidade.</span>
+              <span class="ceintro-saving">Economize R$67 comprando agora</span>
+              <ul class="ceintro-features">
                 <li>
-                  <span class="check-dot"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-                  Precificação para iFood, 99Food, Rappi, AiqFome e venda direta
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Precificação para iFood, 99Food, Rappi e AiqFome
                 </li>
                 <li>
-                  <span class="check-dot"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-                  Controle de estoque e gestão de receitas
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Gerenciamento de estoque e embalagens
                 </li>
                 <li>
-                  <span class="check-dot"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-                  Acesso vitalício — pague uma vez só
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Gestor de pedidos e motoboy
                 </li>
                 <li>
-                  <span class="check-dot"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-                  Funciona 100% offline no Windows
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Relatórios avançados
+                </li>
+                <li>
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  100% offline — Windows
                 </li>
               </ul>
-            </div>
-            <div class="product-price-box">
-              <div class="product-price-old">R$ 97,00</div>
-              <div class="product-price-current">R$ 20</div>
-              <div class="product-price-period">Pagamento único. Sem mensalidade.</div>
-              <a href="precifica.html" class="btn-main">Conhecer o Precifica Gestor &rarr;</a>
+              <a href="ceintro.html" class="ceintro-plan-btn">Ver planos e preços</a>
             </div>
           </div>
         </div>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceintro - Gerencie seu negocio</title>
+  <meta name="description" content="Ceintro - Gestão completa para seu negócio de alimentação. Precificação, estoque, pedidos, motoboy, cardápio virtual e atendimento automatizado via WhatsApp. A partir de R$29,99.">
+  <meta name="keywords" content="gestão de restaurante, precificação de alimentos, controle de estoque, gestor de pedidos, cardápio virtual, bot whatsapp, motoboy, iFood, 99Food, Rappi, AiqFome, software para alimentação">
+  <link rel="canonical" href="https://kodaee.com/ceintro.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://kodaee.com/ceintro.html">
+  <meta property="og:title" content="Ceintro - Gestão completa para seu negócio de alimentação">
+  <meta property="og:description" content="Precificação, estoque, pedidos, motoboy, cardápio virtual e atendimento automatizado via WhatsApp. Plano vitalício a partir de R$29,99.">
+  <meta property="og:image" content="https://kodaee.com/assets/precifica/precifica.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ceintro - Gestão completa para seu negócio de alimentação">
+  <meta name="twitter:description" content="Precificação, estoque, pedidos, motoboy, cardápio virtual e atendimento automatizado via WhatsApp. Plano vitalício a partir de R$29,99.">
+  <meta name="twitter:image" content="https://kodaee.com/assets/precifica/precifica.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ceintro",
+    "operatingSystem": "Windows",
+    "applicationCategory": "BusinessApplication",
+    "description": "Gestão completa para negócios de alimentação: precificação, estoque, pedidos, motoboy, cardápio virtual e atendimento automatizado via WhatsApp.",
+    "offers": {
+      "@type": "Offer",
+      "price": "29.99",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Kodaee",
+      "url": "https://kodaee.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Preciso pagar mensalidade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não! O plano Intro é um pagamento único de R$ 29,99 e você tem acesso vitalício ao software, incluindo todas as atualizações futuras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funciona no meu computador?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Ceintro está disponível para Windows. Basta baixar, instalar e fazer login."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso de internet para usar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O software funciona 100% offline. A internet é necessária apenas para fazer login na primeira vez e para verificar atualizações."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar em mais de um computador?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No plano Intro, sua conta é para 1 usuário. O plano Padrão permitirá mais de 1 usuário. Basta fazer login em outro computador."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Meus dados ficam seguros?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! Todos os dados ficam salvos localmente no seu computador. O sistema faz backups automáticos semanais e você pode exportar seus dados a qualquer momento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Serve para qualquer tipo de alimento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! Seja doces, salgados, bolos, marmitas, lanches, bebidas - qualquer produto alimentício pode ser cadastrado e precificado no sistema."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pg-precifica">
+
+  <!-- HEADER -->
+  <header class="pg-header">
+    <div class="pg-container">
+      <div class="pg-header-inner">
+        <a href="index.html" class="pg-logo">
+          <span class="pg-logo-text">ceintro</span>
+        </a>
+        <nav class="pg-nav">
+          <a href="#solucoes" class="pg-nav-link">Soluções</a>
+          <a href="#funcionalidades" class="pg-nav-link">Funcionalidades</a>
+          <a href="#comprar" class="pg-nav-link">Planos</a>
+          <a href="manual.html" class="pg-nav-link">Documentação</a>
+        </nav>
+        <div class="pg-header-actions">
+          <a href="#comprar" class="pg-btn pg-btn-primary">Ver planos e preços</a>
+        </div>
+        <button class="pg-mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="pg-mobile-nav" id="mobileNav">
+    <a href="#solucoes" class="pg-mobile-link">Soluções</a>
+    <a href="#funcionalidades" class="pg-mobile-link">Funcionalidades</a>
+    <a href="#comprar" class="pg-mobile-link">Planos</a>
+    <a href="manual.html" class="pg-mobile-link">Documentação</a>
+    <a href="#comprar" class="pg-btn pg-btn-primary pg-btn-full">Ver planos e preços</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="pg-hero">
+    <div class="pg-container">
+      <div class="pg-hero-content">
+        <h1 class="pg-hero-title">Tudo que seu negócio precisa para <span class="pg-hero-highlight">crescer do zero</span></h1>
+        <p class="pg-hero-subtitle">Precificação, estoque, gestão de pedidos e motoboy em um só lugar. O software completo para quem está começando e quer profissionalizar seu negócio de alimentação.</p>
+        <div class="pg-hero-actions">
+          <a href="#comprar" class="pg-btn pg-btn-primary pg-btn-lg">Comprar por R$ 29,99</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="pg-categories">
+    <div class="pg-container">
+      <div class="pg-categories-grid">
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+          <span>Restaurantes</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.37 11.223 8.372-6.777a2 2 0 0 1 2.516 0l8.371 6.777"/><path d="M21 15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-5.25"/><path d="M3 15a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h9"/><path d="m6.67 15 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2"/><rect width="20" height="4" x="2" y="11" rx="1"/></svg>
+          <span>Lanchonetes</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg>
+          <span>Bares</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"/><path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"/></svg>
+          <span>Açaiterias</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15h16a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/><path d="M4 9h16c0-4-3.6-7-8-7S4 5 4 9z"/><path d="M3 12h18"/></svg>
+          <span>Hamburgueria</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7"/><path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4"/></svg>
+          <span>Sorveterias</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+          <span>Foodtrucks</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14-1 1"/><path d="m13.75 18.25-1.25 1.42"/><path d="M17.775 5.654a15.68 15.68 0 0 0-12.121 12.12"/><path d="M18.8 9.3a1 1 0 0 0 2.1 7.7"/><path d="M21.964 20.732a1 1 0 0 1-1.232 1.232l-18-5a1 1 0 0 1-.695-1.232A19.68 19.68 0 0 1 15.732 2.037a1 1 0 0 1 1.232.695z"/></svg>
+          <span>Pizzarias</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+          <span>Cafeterias</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 13H3"/><path d="M16 17H3"/><path d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6"/><circle cx="9" cy="7" r="2"/></svg>
+          <span>Confeitarias</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 18H4.774a1.5 1.5 0 0 1-1.352-.97 11 11 0 0 1 .132-6.487"/><path d="M18 10.2V4.774a1.5 1.5 0 0 0-.97-1.352 11 11 0 0 0-6.486.132"/><path d="M18 5a4 3 0 0 1 4 3 2 2 0 0 1-2 2 10 10 0 0 0-5.139 1.42"/><path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14"/><path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676"/></svg>
+          <span>Padarias</span>
+        </div>
+        <div class="pg-category-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/></svg>
+          <span>Marmitarias</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section class="pg-solutions" id="solucoes">
+    <div class="pg-container">
+
+      <!-- Precificação -->
+      <div class="pg-sol-row">
+        <div class="pg-sol-visual">
+          <div class="pg-sol-placeholder">
+            <img src="assets/precifica/precifica.png" alt="Precificação Inteligente">
+          </div>
+        </div>
+        <div class="pg-sol-content">
+
+          <h2 class="pg-sol-title">Saiba exatamente quanto cobrar em cada plataforma</h2>
+          <p class="pg-sol-desc">Calcule o preço ideal considerando custos, taxas e margem de lucro. Funciona para venda direta, iFood, 99Food, Rappi, AiqFome e qualquer outra plataforma.</p>
+          <div class="pg-sol-features">
+            <div class="pg-sol-feat">
+              <h4>Taxas personalizáveis</h4>
+              <p>Configure as taxas de cada plataforma e veja o preço ideal em tempo real.</p>
+            </div>
+            <div class="pg-sol-feat">
+              <h4>Margem de lucro clara</h4>
+              <p>Visualize exatamente quanto você ganha em cada venda.</p>
+            </div>
+          </div>
+          <a href="#funcionalidades" class="pg-sol-link">Saiba mais <span>&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <!-- Estoque -->
+      <div class="pg-sol-row pg-sol-row--reverse">
+        <div class="pg-sol-visual">
+          <div class="pg-sol-placeholder">
+            <img src="assets/precifica/estoque.png" alt="Controle de Estoque">
+          </div>
+        </div>
+        <div class="pg-sol-content">
+
+          <h2 class="pg-sol-title">Nunca mais perca ingrediente por falta de controle</h2>
+          <p class="pg-sol-desc">Gerencie todos os seus ingredientes com quantidade, peso e custo por unidade. Saiba exatamente o que tem, o que está acabando e quanto custou.</p>
+          <div class="pg-sol-features">
+            <div class="pg-sol-feat">
+              <h4>Custo por unidade</h4>
+              <p>Controle o preço de cada ingrediente e acompanhe variações.</p>
+            </div>
+            <div class="pg-sol-feat">
+              <h4>Organização total</h4>
+              <p>Tudo categorizado e fácil de encontrar quando você precisa.</p>
+            </div>
+          </div>
+          <a href="#funcionalidades" class="pg-sol-link">Saiba mais <span>&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <!-- Gestão de Pedidos -->
+      <div class="pg-sol-row">
+        <div class="pg-sol-visual">
+          <div class="pg-sol-placeholder">
+            <img src="assets/precifica/pedido.png" alt="Gestão de Pedidos">
+          </div>
+        </div>
+        <div class="pg-sol-content">
+
+          <h2 class="pg-sol-title">Controle cada pedido do início ao fim</h2>
+          <p class="pg-sol-desc">Receba, organize e acompanhe todos os seus pedidos em um só lugar. Do momento que o cliente faz o pedido até a entrega, tudo sob controle.</p>
+          <div class="pg-sol-features">
+            <div class="pg-sol-feat">
+              <h4>Acompanhamento em tempo real</h4>
+              <p>Veja o status de cada pedido e nunca perca um prazo.</p>
+            </div>
+            <div class="pg-sol-feat">
+              <h4>Histórico completo</h4>
+              <p>Acesse o registro de todos os pedidos para análise e controle.</p>
+            </div>
+          </div>
+          <a href="#funcionalidades" class="pg-sol-link">Saiba mais <span>&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <!-- Motoboy -->
+      <div class="pg-sol-row pg-sol-row--reverse">
+        <div class="pg-sol-visual">
+          <div class="pg-sol-placeholder">
+            <img src="assets/precifica/motoboy.png" alt="Gestão de Motoboy">
+          </div>
+        </div>
+        <div class="pg-sol-content">
+          <h2 class="pg-sol-title">Entregas organizadas sem dor de cabeça</h2>
+          <p class="pg-sol-desc">Gerencie seus entregadores, rotas e entregas de forma simples. Saiba onde cada pedido está e otimize o tempo de entrega.</p>
+          <div class="pg-sol-features">
+            <div class="pg-sol-feat">
+              <h4>Gestão de entregadores</h4>
+              <p>Organize seus motoboys e distribua entregas com eficiência.</p>
+            </div>
+            <div class="pg-sol-feat">
+              <h4>Rastreio simplificado</h4>
+              <p>Acompanhe cada entrega e mantenha o cliente informado.</p>
+            </div>
+          </div>
+          <a href="#funcionalidades" class="pg-sol-link">Saiba mais <span>&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <!-- Relatórios -->
+      <div class="pg-sol-row">
+        <div class="pg-sol-visual">
+          <div class="pg-sol-placeholder pg-sol-gallery">
+            <img src="assets/precifica/relatorio1.png" alt="Relatório 1">
+            <img src="assets/precifica/relatorio2.png" alt="Relatório 2">
+            <img src="assets/precifica/relatorio3.png" alt="Relatório 3">
+          </div>
+        </div>
+        <div class="pg-sol-content">
+          <h2 class="pg-sol-title">Relatórios completos para decisões mais inteligentes</h2>
+          <p class="pg-sol-desc">Visualize o desempenho do seu negócio com relatórios claros e detalhados. Saiba o que mais vende, onde está o lucro e onde ajustar.</p>
+          <div class="pg-sol-features">
+            <div class="pg-sol-feat">
+              <h4>Visão geral do negócio</h4>
+              <p>Acompanhe vendas, custos e lucro em um só lugar.</p>
+            </div>
+            <div class="pg-sol-feat">
+              <h4>Dados para crescer</h4>
+              <p>Tome decisões baseadas em números reais, não no achismo.</p>
+            </div>
+          </div>
+          <a href="#funcionalidades" class="pg-sol-link">Saiba mais <span>&rsaquo;</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="pg-banner">
+    <img src="assets/precifica/sectionimage.jpg" alt="Empreendedora usando o Ceintro" class="pg-banner-img">
+    <div class="pg-banner-overlay">
+      <div class="pg-container">
+        <h2 class="pg-banner-title">Feito para quem faz acontecer</h2>
+        <p class="pg-banner-text">Empreendedores já usam o Ceintro para organizar, precificar e crescer com confiança.</p>
+        <div class="pg-banner-stats">
+          <div class="pg-banner-stat">
+            <span class="pg-banner-stat-number">500+</span>
+            <span class="pg-banner-stat-label">Produtos precificados</span>
+          </div>
+          <div class="pg-banner-stat">
+            <span class="pg-banner-stat-number">100+</span>
+            <span class="pg-banner-stat-label">Empreendedores ativos</span>
+          </div>
+          <div class="pg-banner-stat">
+            <span class="pg-banner-stat-number">4.9</span>
+            <span class="pg-banner-stat-label">Avaliação média</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SHOWCASE -->
+  <section class="pg-showcase" id="funcionalidades">
+    <div class="pg-container">
+      <div class="pg-section-header">
+        <h2 class="pg-section-title">Veja o Ceintro <span class="pg-gradient-text">em ação</span></h2>
+        <p class="pg-section-subtitle">Conheça o sistema e descubra como ele vai facilitar sua rotina</p>
+      </div>
+      <div class="pg-video-placeholder">
+        <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z" fill="currentColor" stroke="none"/></svg>
+        <span>Vídeo em breve</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pg-pricing" id="comprar">
+    <div class="pg-container">
+      <div class="pg-pricing-wrapper">
+        <div class="pg-section-header">
+          <h2 class="pg-section-title pg-text-white">Comece a lucrar de verdade hoje</h2>
+          <p class="pg-section-subtitle pg-text-white-muted">Chega de vender sem saber se está tendo lucro. Com o Ceintro, cada produto é calculado com precisão.</p>
+        </div>
+        <div class="pg-pricing-plans">
+        <!-- Plano Intro -->
+        <div class="pg-pricing-plan">
+          <h3 class="pg-pricing-plan-name">Intro</h3>
+          <p class="pg-pricing-plan-desc">Ideal para MEIs começando a estruturar seu negócio e buscando soluções de software para precificar com segurança.</p>
+          <span class="pg-pricing-old">R$ 97,00</span>
+          <div class="pg-pricing-price">
+            <span class="pg-pricing-symbol">R$</span>
+            <span class="pg-pricing-value">29</span>
+            <span class="pg-pricing-cents">,99</span>
+            <span class="pg-pricing-lifetime">vitalício</span>
+          </div>
+          <span class="pg-pricing-info">Pagamento único. Sem mensalidade.</span>
+          <span class="pg-pricing-saving">Economize R$67 comprando agora</span>
+          <ul class="pg-pricing-features">
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Gerenciamento de estoque e embalagens
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Precificação de receitas e produtos
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Precificação para iFood, 99Food, Rappi e AiqFome
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Gestor de pedidos
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Gestão de motoboys manual (sem rastreio)
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Relatórios avançados
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Dados salvos localmente
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Disponível para windows
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              1 Usuário
+            </li>
+          </ul>
+          <a href="https://buy.stripe.com/cNicN5eDlcO094L2xT2Fa01" class="pg-btn pg-btn-primary pg-btn-lg pg-btn-full pg-btn-rounded" target="_blank" rel="noopener">Comprar Agora</a>
+        </div>
+        <!-- Plano Padrão -->
+        <div class="pg-pricing-plan pg-pricing-plan-soon">
+          <span class="pg-badge-soon">Em breve</span>
+          <h3 class="pg-pricing-plan-name">Padrão</h3>
+          <p class="pg-pricing-plan-desc">Para quem quer expandir com cardápio virtual, atendimento automatizado e acesso multi-usuário.</p>
+          <div class="pg-pricing-price">
+            <span class="pg-pricing-symbol">R$</span>
+            <span class="pg-pricing-value">15</span>
+            <span class="pg-pricing-period">/mês</span>
+          </div>
+          <span class="pg-pricing-info">Cobrado mensalmente.</span>
+          <ul class="pg-pricing-features">
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Tudo do plano Intro
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Cardápio virtual
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Status do pedido via WhatsApp automatizado
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Bot para atendimento no WhatsApp
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Mais de 1 usuário
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Desktop + Web
+            </li>
+          </ul>
+          <span class="pg-btn pg-btn-disabled pg-btn-lg pg-btn-full pg-btn-rounded">Em breve</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pg-faq" id="duvidas">
+    <div class="pg-container">
+      <div class="pg-section-header">
+        <h2 class="pg-section-title">Perguntas Frequentes</h2>
+      </div>
+      <div class="pg-faq-list">
+        <details class="pg-faq-item">
+          <summary>Preciso pagar mensalidade no plano Intro?</summary>
+          <p>Não! O plano Intro é um pagamento único de R$ 29,99 e você tem acesso vitalício ao software, incluindo todas as atualizações futuras.</p>
+        </details>
+        <details class="pg-faq-item">
+          <summary>Funciona no meu computador?</summary>
+          <p>O plano Intro está disponível na versão desktop para Windows. O plano Padrão terá acesso via Desktop + Web.</p>
+        </details>
+        <details class="pg-faq-item">
+          <summary>Preciso de internet para usar?</summary>
+          <p>No plano Intro, o software funciona 100% offline com dados salvos localmente. A internet é necessária apenas para fazer login na primeira vez.</p>
+        </details>
+        <details class="pg-faq-item">
+          <summary>Posso usar em mais de um computador?</summary>
+          <p>No plano Intro, sua conta é para 1 usuário. O plano Padrão permitirá mais de 1 usuário. Basta fazer login em outro computador.</p>
+        </details>
+        <details class="pg-faq-item">
+          <summary>Quando o plano Padrão estará disponível?</summary>
+          <p>O plano Padrão está em desenvolvimento e estará disponível em breve. Fique atento às nossas atualizações!</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pg-footer">
+    <div class="pg-container">
+      <div class="pg-footer-inner">
+        <a href="index.html" class="pg-footer-brand">
+          <span>Desenvolvido por <strong>Kodaee</strong></span>
+        </a>
+        <p class="pg-footer-copy">
+          <a href="manual.html">Documentação</a> | <a href="mailto:suporte@kodaee.com">suporte@kodaee.com</a>
+          <br>&copy; 2026 Kodaee. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile nav
+        document.getElementById('mobileNav').classList.remove('open');
+        document.getElementById('mobileToggle').classList.remove('open');
+      });
+    });
+
+    // Mobile toggle
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      document.getElementById('mobileNav').classList.toggle('open');
+    });
+
+    // Showcase tabs
+    document.querySelectorAll('.pg-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        const idx = this.dataset.tab;
+        document.querySelectorAll('.pg-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.pg-showcase-panel').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelector(`.pg-showcase-panel[data-panel="${idx}"]`).classList.add('active');
+      });
+    });
+
+    // Lightbox
+    document.querySelectorAll('.pg-showcase-img img, .pg-hero-screenshot, .pg-sol-placeholder img').forEach(img => {
+      img.addEventListener('click', function () {
+        const overlay = document.createElement('div');
+        overlay.className = 'pg-lightbox';
+        const clone = document.createElement('img');
+        clone.src = this.src;
+        clone.alt = this.alt;
+        overlay.appendChild(clone);
+        document.body.appendChild(overlay);
+        requestAnimationFrame(() => overlay.classList.add('active'));
+        overlay.addEventListener('click', () => {
+          overlay.classList.remove('active');
+          setTimeout(() => overlay.remove(), 250);
+        });
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('pg-visible');
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.pg-solution-card, .pg-showcase-panel, .pg-stat, .pg-why-content, .pg-why-visual, .pg-sol-row').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

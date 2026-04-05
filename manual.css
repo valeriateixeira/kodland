@@ -1,12 +1,27 @@
 /* ===== MANUAL PAGE STYLES ===== */
 
+/* Override primary palette to match Precifica blue */
+.pg-precifica {
+  --primary: #0960cb;
+  --primary-dark: #074da3;
+  --primary-light: #3b82f6;
+  --primary-bg: #eff6ff;
+}
+
+/* Use same font family as landing page */
+.pg-precifica .manual-hero-content h1,
+.pg-precifica .section-header h2,
+.pg-precifica .sidebar-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
 /* MANUAL HERO */
 .manual-hero {
   padding: 120px 0 16px;
 }
 
 .manual-hero-content {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: linear-gradient(135deg, var(--pg-primary-dark, var(--primary-dark)), var(--pg-primary, var(--primary)), var(--pg-primary-light, var(--primary-light)));
   border-radius: var(--radius-lg);
   padding: 56px 48px;
   text-align: center;
@@ -699,7 +714,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #f0ecfb;
+  background: var(--primary-bg, #eff6ff);
   border-radius: 8px;
   padding: 10px 14px;
 }
@@ -961,7 +976,7 @@ kbd {
 }
 
 .carousel-arrow {
-  background: var(--primary, #5b3dc9);
+  background: var(--primary, #0960cb);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -976,7 +991,7 @@ kbd {
 }
 
 .carousel-arrow:hover {
-  background: var(--primary-dark, #4a2db0);
+  background: var(--primary-dark, #074da3);
   transform: scale(1.1);
 }
 
@@ -994,9 +1009,9 @@ kbd {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 2px solid var(--primary, #5b3dc9);
+  border: 2px solid var(--primary, #0960cb);
   background: transparent;
-  color: var(--primary, #5b3dc9);
+  color: var(--primary, #0960cb);
   font-size: 0.7rem;
   font-weight: 700;
   cursor: pointer;
@@ -1007,12 +1022,12 @@ kbd {
 }
 
 .carousel-dot.active {
-  background: var(--primary, #5b3dc9);
+  background: var(--primary, #0960cb);
   color: #fff;
 }
 
 .carousel-dot:hover {
-  background: var(--primary, #5b3dc9);
+  background: var(--primary, #0960cb);
   color: #fff;
 }
 
@@ -1060,7 +1075,7 @@ kbd {
   margin-top: 24px;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, #6C3CE1, #8B5CF6, #A78BFA);
+  background: linear-gradient(135deg, #074da3, #0960cb, #3b82f6);
 }
 
 .video-banner {
@@ -1069,7 +1084,7 @@ kbd {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #6C3CE1, #8B5CF6, #A78BFA);
+  background: linear-gradient(135deg, #074da3, #0960cb, #3b82f6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1198,13 +1213,13 @@ kbd {
 .vc-progress-filled {
   height: 100%;
   width: 0%;
-  background: #8B5CF6;
+  background: #0960cb;
   border-radius: 3px;
   transition: width 0.1s linear;
 }
 
 .vc-progress:hover .vc-progress-filled {
-  background: #A78BFA;
+  background: #3b82f6;
 }
 
 /* Fullscreen styles */

@@ -3,45 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual do Usuário - Precifica Gestor</title>
-  <meta name="description" content="Manual completo do Precifica Gestor. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
-  <meta name="keywords" content="manual Precifica Gestor, como usar Precifica Gestor, tutorial precificação, documentação Precifica">
+  <title>Manual do Usuário - Ceintro</title>
+  <meta name="description" content="Manual completo do Ceintro. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
+  <meta name="keywords" content="manual Ceintro, como usar Ceintro, tutorial precificação, documentação Ceintro">
   <link rel="canonical" href="https://kodaee.com/manual.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://kodaee.com/manual.html">
-  <meta property="og:title" content="Manual do Usuário - Precifica Gestor">
-  <meta property="og:description" content="Manual completo do Precifica Gestor. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
+  <meta property="og:title" content="Manual do Usuário - Ceintro">
+  <meta property="og:description" content="Manual completo do Ceintro. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
   <meta property="og:image" content="https://kodaee.com/assets/logo.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Manual do Usuário - Precifica Gestor">
-  <meta name="twitter:description" content="Manual completo do Precifica Gestor. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
+  <meta name="twitter:title" content="Manual do Usuário - Ceintro">
+  <meta name="twitter:description" content="Manual completo do Ceintro. Aprenda a instalar, configurar e usar todas as funcionalidades do sistema.">
   <meta name="twitter:image" content="https://kodaee.com/assets/logo.png">
 
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="manual.css">
 </head>
-<body>
+<body class="pg-precifica">
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <div class="logo-group">
-          <img src="assets/logo.png" alt="Precifica Gestor" class="logo-img">
-          <span class="logo-text">Precifica Gestor</span>
+  <header class="pg-header">
+    <div class="pg-container">
+      <div class="pg-header-inner">
+        <a href="ceintro.html" class="pg-logo">
+          <span class="pg-logo-text">ceintro</span>
+        </a>
+        <nav class="pg-nav">
+          <a href="ceintro.html" class="pg-nav-link">Início</a>
+          <a href="ceintro.html#comprar" class="pg-nav-link">Planos</a>
+          <a href="#" class="pg-nav-link pg-nav-link-active">Documentação</a>
+        </nav>
+        <div class="pg-header-actions">
+          <a href="ceintro.html#comprar" class="pg-btn pg-btn-primary">Ver planos e preços</a>
         </div>
-        <div class="header-links">
-          <a href="precifica.html" class="btn btn-sm">Voltar ao Site</a>
-        </div>
+        <button class="pg-mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- MOBILE NAV -->
+  <div class="pg-mobile-nav" id="mobileNav">
+    <a href="ceintro.html" class="pg-mobile-link">Início</a>
+    <a href="ceintro.html#comprar" class="pg-mobile-link">Planos</a>
+    <a href="#" class="pg-mobile-link">Documentação</a>
+    <a href="ceintro.html#comprar" class="pg-btn pg-btn-primary pg-btn-full">Ver planos e preços</a>
+  </div>
 
   <!-- MANUAL HERO -->
   <section class="manual-hero">
@@ -49,7 +64,7 @@
       <div class="manual-hero-content">
         <h1>Manual Do Usuário</h1>
         <p class="manual-version">Versão 1.0</p>
-        <div class="manual-product-name">PRECIFICA GESTOR</div>
+        <div class="manual-product-name">CEINTRO</div>
         <div class="manual-platform">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
           Windows
@@ -210,7 +225,7 @@
             </div>
 
             <h3>Guia de Instalação no Windows</h3>
-            <p>Siga os passos abaixo para instalar o Precifica Gestor:</p>
+            <p>Siga os passos abaixo para instalar o Ceintro:</p>
 
             <div class="install-steps">
               <div class="install-step">
@@ -252,7 +267,7 @@
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#5b3dc9"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                       </div>
                       <div class="browser-download-file-info">
-                        <span class="browser-download-file-name">Precifica-Gestor-Setup.exe</span>
+                        <span class="browser-download-file-name">Ceintro-Setup.exe</span>
                         <span class="browser-download-file-size">24.5 MB</span>
                       </div>
                     </div>
@@ -265,7 +280,7 @@
                   <span class="install-step-number">2</span>
                   <h4>Execute o Arquivo</h4>
                 </div>
-                <p>Localize o arquivo <strong>Precifica-Gestor-Setup.exe</strong> na sua pasta de Downloads e dê um clique duplo.</p>
+                <p>Localize o arquivo <strong>Ceintro-Setup.exe</strong> na sua pasta de Downloads e dê um clique duplo.</p>
                 <div class="win-explorer">
                   <div class="win-titlebar">
                     <div class="win-titlebar-left">
@@ -320,9 +335,9 @@
                     <div class="win-content">
                       <div class="win-file selected">
                         <div class="win-file-icon">
-                          <img src="assets/logo.png" alt="Precifica Gestor icon">
+                          <img src="assets/logo.png" alt="Ceintro icon">
                         </div>
-                        <span class="win-file-name">Precifica-Gestor-Setup.exe</span>
+                        <span class="win-file-name">Ceintro-Setup.exe</span>
                       </div>
                     </div>
                   </div>
@@ -420,10 +435,10 @@
               <span class="section-number">3</span>
               <h2>Funcionalidades do App</h2>
             </div>
-            <p>Veja como utilizar as principais funcionalidades do Precifica Gestor no vídeo abaixo:</p>
+            <p>Veja como utilizar as principais funcionalidades do Ceintro no vídeo abaixo:</p>
             <div class="video-container" id="videoContainerFuncionalidades">
               <div class="video-banner" data-video="funcionalidades">
-                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <img src="assets/logo.png" alt="Ceintro" class="video-banner-logo">
                 <span class="video-banner-title">Cadastrando um produto do zero</span>
                 <div class="video-play-btn">
                   <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -474,7 +489,7 @@
             </ol>
             <div class="video-container" id="videoContainerPersonalizar">
               <div class="video-banner" data-video="personalizar">
-                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <img src="assets/logo.png" alt="Ceintro" class="video-banner-logo">
                 <span class="video-banner-title">Como personalizar seu sistema</span>
                 <div class="video-play-btn">
                   <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -493,7 +508,7 @@
 
             <div class="video-container" id="videoContainerDarkmode">
               <div class="video-banner" data-video="darkmode">
-                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <img src="assets/logo.png" alt="Ceintro" class="video-banner-logo">
                 <span class="video-banner-title">Modo Escuro em ação</span>
                 <div class="video-play-btn">
                   <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -532,7 +547,7 @@
 
             <div class="video-container" id="videoContainerImportExport">
               <div class="video-banner" data-video="importexport">
-                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <img src="assets/logo.png" alt="Ceintro" class="video-banner-logo">
                 <span class="video-banner-title">Como exportar e importar dados</span>
                 <div class="video-play-btn">
                   <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -579,7 +594,7 @@
 
             <div class="video-container" id="videoContainerBackup">
               <div class="video-banner" data-video="backup">
-                <img src="assets/logo.png" alt="Precifica Gestor" class="video-banner-logo">
+                <img src="assets/logo.png" alt="Ceintro" class="video-banner-logo">
                 <span class="video-banner-title">Como fazer e recuperar backup</span>
                 <div class="video-play-btn">
                   <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -605,7 +620,7 @@
             </div>
             <p>Tenha uma conta no Google Drive e tenha o Google Drive instalado na sua máquina. Para isso baixe o Google Drive para computador.</p>
             <ol class="manual-ordered-list">
-              <li>Após ter instalado o Google Drive, crie uma pasta específica para guardar os dados do Precifica Gestor. Você pode chamá-la de <strong>precifica_gestor</strong> ou qualquer nome que preferir.</li>
+              <li>Após ter instalado o Google Drive, crie uma pasta específica para guardar os dados do Ceintro. Você pode chamá-la de <strong>ceintro_dados</strong> ou qualquer nome que preferir.</li>
               <li>Vá no menu à esquerda e clique em <strong>Configurações</strong> (Engrenagem).</li>
               <li>Vá na aba <strong>Sincronizar</strong>.</li>
               <li>Clique em <strong>Escolher Pasta</strong> e selecione a pasta criada anteriormente dentro do seu Google Drive.</li>
@@ -653,22 +668,6 @@
       </div>
     </div>
   </div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <a href="index.html" class="footer-brand">
-          <img src="assets/logo-kodaee.png" alt="Kodaee" class="footer-logo">
-          <span>Desenvolvido por <strong>Kodaee</strong></span>
-        </a>
-        <p class="footer-copy">
-          <a href="mailto:suporte@kodaee.com">suporte@kodaee.com</a>
-          <br>&copy; 2026 Kodaee. Todos os direitos reservados.
-        </p>
-      </div>
-    </div>
-  </footer>
 
   <script>
     // Smooth scroll
@@ -1019,6 +1018,29 @@
           setTimeout(() => overlay.remove(), 250);
         });
       });
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="pg-footer">
+    <div class="pg-container">
+      <div class="pg-footer-inner">
+        <a href="ceintro.html" class="pg-footer-brand">
+          <span>Desenvolvido por <strong>Kodaee</strong></span>
+        </a>
+        <p class="pg-footer-copy">
+          <a href="ceintro.html">Voltar ao Site</a> | <a href="mailto:suporte@kodaee.com">suporte@kodaee.com</a>
+          <br>&copy; 2026 Kodaee. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile toggle
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      this.classList.toggle('open');
+      document.getElementById('mobileNav').classList.toggle('open');
     });
   </script>
 </body>
