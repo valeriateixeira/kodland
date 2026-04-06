@@ -1695,6 +1695,7 @@ a { text-decoration: none; color: inherit; }
 .pg-solutions {
   padding: 40px 0;
   background: var(--pg-bg);
+  overflow-x: hidden;
 }
 
 .pg-sol-row {
@@ -2676,4 +2677,36 @@ a { text-decoration: none; color: inherit; }
   .pg-section-title { font-size: 1.5rem; }
   .pg-pricing-value { font-size: 3rem; }
   .pg-stat-number { font-size: 2.2rem; }
+
+  .pg-banner { height: auto; min-height: 480px; }
+  .pg-banner-stats {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    justify-content: center;
+  }
+  .pg-banner-stat-number { font-size: 1.8rem; }
+  .pg-banner-stat-label { font-size: 0.8rem; }
+  .pg-banner-title { font-size: 1.4rem; }
+  .pg-banner-text { font-size: 0.9rem; }
+
+  .pg-hero-subtitle { font-size: 0.95rem; }
+
+  .pg-pricing-plan { padding: 28px 20px; }
+
+  .pg-category-item {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  .pg-category-item svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pg-sol-row {
+    transform: translateX(-30px);
+  }
+  .pg-sol-row--reverse {
+    transform: translateX(30px);
+  }
 }
