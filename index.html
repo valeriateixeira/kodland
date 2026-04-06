@@ -8,21 +8,15 @@
   <meta name="keywords" content="Kodaee, software, aplicativos, ferramentas, Ceintro, gestão, produtividade">
   <meta name="google-site-verification" content="Rf4N8eSs5ReoQbQ1ywu6VXa-GkCHYGlrph3yNA324PM" />
   <link rel="canonical" href="https://kodaee.com/">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kodaee.com/">
   <meta property="og:title" content="Kodaee - Software que facilita sua rotina">
-  <meta property="og:description" content="A Kodaee cria software prático para quem precisa de ferramentas simples que funcionam. Do negócio ao uso pessoal, sem complicação.">
+  <meta property="og:description" content="A Kodaee cria software prático para quem precisa de ferramentas simples que funcionam.">
   <meta property="og:image" content="https://kodaee.com/assets/logo-kodaee.png">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kodaee - Software que facilita sua rotina">
-  <meta name="twitter:description" content="A Kodaee cria software prático para quem precisa de ferramentas simples que funcionam. Do negócio ao uso pessoal, sem complicação.">
+  <meta name="twitter:description" content="A Kodaee cria software prático para quem precisa de ferramentas simples que funcionam.">
   <meta name="twitter:image" content="https://kodaee.com/assets/logo-kodaee.png">
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
@@ -36,1043 +30,649 @@
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
     "name": "Ceintro",
-    "url": "https://kodaee.com/ceintro.html",
-    "description": "Software de precificação e gestão para empreendedores de alimentação"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SiteNavigationElement",
-    "name": "Manual",
-    "url": "https://kodaee.com/manual.html",
-    "description": "Manual do Ceintro"
+    "url": "https://kodaee.com/ceintro.html"
   }]
   </script>
-
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg: #eaeaee;
-      --card: #f2f2f5;
-      --white: #ffffff;
-      --text: #111111;
-      --text-muted: #555566;
-      --text-light: #8e8e9a;
-      --primary: #5b3dc9;
-      --primary-dark: #4527a0;
-      --coral: #f47068;
-      --radius: 20px;
-      --radius-lg: 28px;
-      --radius-pill: 50px;
-    }
-
-    html { scroll-behavior: smooth; }
-
+    html { font-size: 10px; scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
+      font-family: 'Inter', helvetica, arial, sans-serif;
+      font-size: 1.6rem;
+      color: #000;
+      background: #fff;
       -webkit-font-smoothing: antialiased;
-      background: var(--bg);
-      min-height: 100vh;
+      line-height: 1.5;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== TOKENS ===== */
+    :root {
+      --black: #000;
+      --white: #fff;
+      --neutral-100: #1f1f1f;
+      --neutral-300: #707070;
+      --neutral-500: #999;
+      --neutral-700: #ccc;
+      --neutral-800: #e5e5e5;
+      --neutral-900: #f7f6f5;
+      --blue: #006aff;
+      --blue-dark: #0055cc;
+      --blue-light: #4a95ff;
+      --nav-height: 7.2rem;
+      --gutter: 4rem;
+      --max-width: 120rem;
+      --radius-pill: 10rem;
+      --radius-card: 1.6rem;
+      --radius-card-lg: 2.4rem;
+      --duration: 0.3s;
+      --easing: cubic-bezier(.4, 0, .2, 1);
     }
 
     .container {
-      max-width: 1200px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 var(--gutter);
     }
 
-    /* HEADER */
-    .header {
-      padding: 20px 0;
+    /* ===== NAV (transparent, overlaying hero) ===== */
+    .nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
-    }
-
-    .header-bar {
+      z-index: 1000;
+      height: var(--nav-height);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      background: var(--white);
-      border-radius: var(--radius-pill);
-      padding: 10px 12px 10px 28px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      background: transparent;
+      transition: background var(--duration);
     }
-
-    .header-left {
+    .nav.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--neutral-800);
+    }
+    .nav.scrolled .nav-logo span,
+    .nav.scrolled .nav-links a,
+    .nav.scrolled .nav-right > a:not(.Action) { color: var(--black); }
+    .nav .container {
       display: flex;
       align-items: center;
-      gap: 32px;
+      width: 100%;
     }
-
-    .header-nav {
+    .nav-logo {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 1rem;
+      margin-right: 4rem;
     }
-
-    .header-nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
+    .nav-logo img {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 0.6rem;
     }
-
-    .header-nav a:hover {
-      color: var(--text);
-    }
-
-    .logo-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .logo-img {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-    }
-
-    .logo-text {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .header-pill {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--bg);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: var(--radius-pill);
-      transition: all 0.2s;
-    }
-
-    .header-pill:hover {
-      background: #dddde2;
-    }
-
-    .header-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--text);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .header-icon:hover {
-      background: #333;
-    }
-
-    /* HERO */
-    .hero {
-      padding: 120px 0 40px;
-    }
-
-    .hero-main {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 56px 64px;
-      position: relative;
-      overflow: hidden;
-      min-height: 480px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      color: var(--text);
-      max-width: 600px;
-    }
-
-    .hero h1 .purple {
-      color: var(--primary);
-    }
-
-    .hero-review {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .hero-avatars {
-      display: flex;
-    }
-
-    .hero-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 3px solid var(--white);
-      margin-left: -10px;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    .hero-avatar:first-child { margin-left: 0; background: #c4b5fd; color: #4527a0; }
-    .hero-avatar:nth-child(2) { background: #fecaca; color: #991b1b; }
-    .hero-avatar:nth-child(3) { background: #bfdbfe; color: #1e40af; }
-
-    .hero-review-text {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: right;
-      line-height: 1.4;
-    }
-
-    .hero-review-stars {
-      color: #f59e0b;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-    }
-
-    .hero-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-top: 40px;
-    }
-
-    .hero-bottom-left {
-      max-width: 320px;
-    }
-
-    .hero-bottom-left h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .hero-bottom-left .sub {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .hero-bottom-left p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .btn-round {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--coral);
-      color: white;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-    }
-
-    .btn-round:hover {
-      background: #e85d55;
-      transform: scale(1.05);
-    }
-
-    .hero-product-float {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .hero-product-float img {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-    }
-
-    .hero-product-float-info h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .hero-product-float-info span {
-      font-size: 0.7rem;
-      color: var(--text-light);
-    }
-
-    /* FLOATING CARDS ON HERO */
-    .hero-float-cards {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      gap: 16px;
-      pointer-events: none;
-    }
-
-    .float-card {
-      background: var(--card);
-      border-radius: 20px;
-      width: 180px;
-      height: 220px;
-      opacity: 0.4;
-    }
-
-    /* SECTIONS */
-    .sections-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .section-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 48px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section-card-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-light);
-      margin-bottom: 16px;
-    }
-
-    .section-card h2 {
+    .nav-logo span {
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      line-height: 1.2;
+      color: var(--white);
+      transition: color var(--duration);
     }
-
-    .section-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    /* ABOUT CARD */
-    .about-card {
+    .nav-links {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .about-values {
-      display: flex;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .about-value {
-      background: var(--bg);
-      border-radius: 14px;
-      padding: 16px 20px;
+      align-items: center;
+      gap: 3.2rem;
       flex: 1;
-      text-align: center;
     }
-
-    .about-value-number {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 2px;
-    }
-
-    .about-value-label {
-      font-size: 0.7rem;
-      color: var(--text-light);
+    .nav-links a {
+      font-size: 1.4rem;
       font-weight: 500;
-    }
-
-    /* STATS CARD */
-    .stats-card {
-      background: #2a2a3d !important;
       color: var(--white);
+      transition: color var(--duration);
     }
-
-    .stats-card .section-card-label {
-      color: rgba(255,255,255,0.5);
+    .nav-links a:hover { opacity: 0.7; }
+    .nav.scrolled .nav-links a:hover { color: var(--blue); opacity: 1; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-left: auto;
     }
-
-    .stats-card h2 {
+    .nav-right > a:not(.Action) {
+      font-size: 1.4rem;
+      font-weight: 500;
       color: var(--white);
+      transition: color var(--duration);
     }
+    .nav-right > a:not(.Action):hover { opacity: 0.7; }
+    .nav.scrolled .nav-right > a:not(.Action):hover { color: var(--blue); opacity: 1; }
 
-    .stats-card p {
-      color: rgba(255,255,255,0.6);
-    }
-
-    .stats-list {
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .stats-list-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .stats-list-item:last-child {
-      border-bottom: none;
-    }
-
-    .stats-list-item .label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .stats-list-item .value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.95);
-    }
-
-    /* PRODUCT SECTION */
-    .product-section {
-      margin-top: 16px;
-    }
-
-    /* CEINTRO BANNER */
-    .ceintro-banner {
-      background: linear-gradient(135deg, #074da3, #0960cb, #3b82f6);
-      border-radius: var(--radius-lg);
-      padding: 64px 56px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ceintro-banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 45%;
-      height: 100%;
-      background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
-    }
-
-    .ceintro-banner-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .ceintro-logo {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      margin-bottom: 20px;
-    }
-
-    .ceintro-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-
-    .ceintro-highlight {
-      color: #93c5fd;
-    }
-
-    .ceintro-subtitle {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.7;
-      margin-bottom: 32px;
-      max-width: 480px;
-    }
-
-    .ceintro-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      color: #0960cb;
-      padding: 14px 32px;
-      border-radius: var(--radius-pill);
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s;
-    }
-
-    .ceintro-cta-btn:hover {
-      background: #eff6ff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
-
-    .ceintro-plan-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 36px 32px;
-      border: 1px solid #e2e8f0;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .ceintro-plan-name {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 8px;
-    }
-
-    .ceintro-plan-desc {
-      font-size: 0.9rem;
-      color: #475569;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .ceintro-price-old {
-      color: #475569;
-      text-decoration: line-through;
-      font-size: 0.9rem;
-    }
-
-    .ceintro-price {
-      display: flex;
-      align-items: flex-start;
-      gap: 2px;
-      margin: 4px 0 4px;
-    }
-
-    .ceintro-price-symbol {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-top: 12px;
-    }
-
-    .ceintro-price-value {
-      font-size: 4rem;
-      font-weight: 900;
-      color: #0f172a;
-      line-height: 1;
-    }
-
-    .ceintro-price-cents {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-top: 10px;
-    }
-
-    .ceintro-price-lifetime {
-      background: #0960cb;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 4px 12px;
-      border-radius: 20px;
-      align-self: flex-end;
-      margin-bottom: 8px;
-      margin-left: 4px;
-    }
-
-    .ceintro-price-info {
-      color: #475569;
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-    }
-
-    .ceintro-saving {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #2d6a2e;
-      border-left: 3px solid #2d6a2e;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
-
-    .ceintro-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
-      padding-top: 20px;
-      border-top: 1px solid #e2e8f0;
-      width: 100%;
-    }
-
-    .ceintro-features li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: #475569;
-    }
-
-    .ceintro-features li svg {
-      flex-shrink: 0;
-    }
-
-    .ceintro-plan-btn {
+    /* Button styles (Square: Action--button) */
+    .Action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      background: #0960cb;
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: var(--radius-pill);
-      font-size: 0.95rem;
+      font-family: inherit;
       font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s var(--easing), background var(--duration), opacity var(--duration);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .Action:hover { transform: scale(1.05); }
+    .Action:active { transform: scale(0.95) translateY(5%); opacity: 0.6; }
+
+    .Action--primary {
+      background: var(--blue);
+      color: var(--white);
+      font-size: 1.4rem;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-pill);
+      min-width: 12rem;
+    }
+    .Action--primary:hover { background: var(--blue-dark); }
+
+    .Action--primary-lg {
+      background: var(--blue);
+      color: var(--white);
+      font-size: 1.6rem;
+      padding: 2rem 4rem;
+      border-radius: var(--radius-pill);
+      min-width: 12rem;
+    }
+    .Action--primary-lg:hover { background: var(--blue-dark); }
+
+    .Action--alt {
+      background: transparent;
+      color: var(--white);
+      font-size: 1.6rem;
+      padding: 2rem 4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .Action--alt:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+
+    .Action--dark {
+      background: var(--black);
+      color: var(--white);
+      font-size: 1.6rem;
+      padding: 2rem 4rem;
+      border-radius: var(--radius-pill);
+      min-width: 12rem;
+    }
+    .Action--dark:hover { background: var(--neutral-100); }
+
+    .Action--text {
+      background: none;
+      color: var(--black);
+      font-size: 1.4rem;
+      padding: 0;
+      border-bottom: 2px solid var(--black);
+      border-radius: 0;
+    }
+    .Action--text:hover { color: var(--blue); border-color: var(--blue); transform: none; }
+    .Action--text:active { transform: none; }
+
+    /* Burger */
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-burger span { display: block; width: 2rem; height: 0.2rem; background: var(--white); margin: 0.5rem 0; border-radius: 1px; transition: all var(--duration); }
+    .nav.scrolled .nav-burger span { background: var(--black); }
+    .nav-burger.open span:first-child { transform: rotate(45deg) translate(0.5rem, 0.5rem); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:last-child { transform: rotate(-45deg) translate(0.5rem, -0.5rem); }
+
+    .nav-mobile {
+      display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; bottom: 0;
+      background: var(--white); z-index: 999; flex-direction: column;
+      padding: 2rem var(--gutter); gap: 0;
+      opacity: 0; pointer-events: none; transition: opacity var(--duration);
+    }
+    .nav-mobile.open { opacity: 1; pointer-events: auto; }
+    .nav-mobile a {
+      font-size: 2rem; font-weight: 600; padding: 2rem 0;
+      border-bottom: 1px solid var(--neutral-800); color: var(--black);
     }
 
-    .ceintro-plan-btn:hover {
-      background: #074da3;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(9, 96, 203, 0.3);
-    }
-
-    /* COMING SOON PRODUCTS */
-    .coming-soon-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .coming-soon-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 32px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    /* ===== HERO (full-bleed image, serif heading, logo marquee) ===== */
+    .Hero {
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: var(--white);
     }
-
-    .coming-soon-card img {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
+    .Hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .Hero__bg img,
+    .Hero__bg video {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
-
-    .coming-soon-info h4 {
-      font-size: 1rem;
-      font-weight: 800;
-      margin-bottom: 2px;
+    .Hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
     }
-
-    .coming-soon-info p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: var(--bg);
-      color: var(--text-light);
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-    }
-
-    .coming-soon-badge .dot-pulse {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--coral);
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .platform-tags {
+    .Hero__content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
       display: flex;
-      gap: 6px;
-      margin-top: 6px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14rem var(--gutter) 6rem;
     }
-
-    .platform-tag {
-      font-size: 0.6rem;
-      font-weight: 600;
-      color: var(--text-light);
-      background: var(--bg);
-      padding: 3px 8px;
-      border-radius: 6px;
+    .Hero h1 {
+      font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      font-size: clamp(4.8rem, 8vw, 9rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 4rem;
+      max-width: 100rem;
+    }
+    .Hero__ctas {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .Hero__cta-outline {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
+      font-family: inherit;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      padding: 1.6rem 3.6rem;
+      border-radius: var(--radius-pill);
+      transition: transform 0.15s, background var(--duration), border-color var(--duration);
+      line-height: 1;
     }
+    .Hero__cta-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); transform: scale(1.05); }
+    .Hero__cta-outline:active { transform: scale(0.95); }
 
-    .platform-tag svg {
-      width: 10px;
-      height: 10px;
+    /* Logo marquee at hero bottom */
+    .Hero__marquee {
+      position: relative;
+      z-index: 2;
+      padding: 2.4rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .Hero__marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 6rem;
+      animation: heroMarquee 30s linear infinite;
+    }
+    .Hero__marquee-track span {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       flex-shrink: 0;
     }
-
-    /* FOOTER */
-    .footer {
-      padding: 32px 0 40px;
-      margin-top: 16px;
+    @keyframes heroMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+    /* ===== SECTION EXPLORER (Square: ContentExplorerAccordion - eyebrow, heading, accordion+image) ===== */
+    .Section {
+      padding: 12rem 0;
+    }
+    .Section--accent {
+      background: var(--neutral-900);
+    }
+    .Section--dark {
+      background: var(--black);
+      color: var(--white);
+    }
+    .Section__header {
+      text-align: center;
+      margin-bottom: 7.2rem;
+    }
+    .Section__header--left {
+      text-align: left;
     }
 
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-brand img {
-      width: 26px;
-      height: 26px;
-      border-radius: 7px;
-    }
-
-    .footer-brand span {
+    .EyebrowText {
+      font-size: 1.2rem;
       font-weight: 700;
-      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--neutral-300);
+      margin-bottom: 1.6rem;
+      display: block;
+    }
+    .Section--dark .EyebrowText { color: var(--neutral-500); }
+
+    .Text--600 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .Text--700 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3.2rem, 5vw, 4.8rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .Text--300 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .Text--200 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .Text--100 {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+    .Text--50 {
+      font-size: 1.2rem;
+      line-height: 1.5;
     }
 
-    .footer-links {
+
+    /* ===== CLOSING CTA ===== */
+    .ClosingCta {
+      padding: 12rem 0;
+      text-align: center;
+    }
+    /* ===== PRODUCT CARD ===== */
+    .ProductCard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .ProductCard__img {
       display: flex;
       align-items: center;
-      gap: 24px;
+      justify-content: center;
+    }
+    .ProductCard__img img {
+      width: 36rem;
+      height: 36rem;
+      border-radius: 6rem;
+    }
+    .ProductCard__body p {
+      font-size: 1.6rem;
+      color: var(--neutral-300);
+      line-height: 1.6;
+      margin: 1.2rem 0 2rem;
+      max-width: 50rem;
     }
 
-    .footer-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      transition: color 0.2s;
+    .ClosingCta h2 { margin-bottom: 1.6rem; }
+    .ClosingCta p {
+      font-size: 1.8rem;
+      color: var(--neutral-500);
+      margin-bottom: 4rem;
     }
 
-    .footer-links a:hover {
-      color: var(--text);
+    /* ===== FOOTER (Square: dark, columns) ===== */
+    .Footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 6rem 0 4rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .Footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 3rem;
+    }
+    .Footer__brand { display: flex; align-items: center; gap: 1rem; }
+    .Footer__brand img { width: 2.4rem; height: 2.4rem; border-radius: 0.6rem; }
+    .Footer__brand span { font-weight: 800; font-size: 1.6rem; }
+    .Footer__cols { display: flex; gap: 6.4rem; }
+    .Footer__col h4 {
+      font-size: 1.2rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1.6rem;
+    }
+    .Footer__col a {
+      display: block; font-size: 1.4rem; color: rgba(255,255,255,0.65);
+      padding: 0.4rem 0; transition: color var(--duration);
+    }
+    .Footer__col a:hover { color: var(--white); }
+    .Footer__social {
+      display: flex;
+      gap: 1.6rem;
+    }
+    .Footer__social a {
+      color: rgba(255,255,255,0.65);
+      transition: color var(--duration);
+    }
+    .Footer__social a:hover { color: var(--white); }
+    .Footer__copy { font-size: 1.2rem; color: rgba(255,255,255,0.25); }
+
+    /* ===== FADE IN ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateX(-6rem);
+      transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .footer-copy {
-      color: var(--text-light);
-      font-size: 0.7rem;
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      :root { --gutter: 3rem; }
     }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .header-nav { display: none; }
-
-      .header-bar { padding: 8px 8px 8px 20px; }
-
-      .hero-main { padding: 36px 28px; min-height: auto; }
-
-      .hero h1 { font-size: 2.2rem; }
-
-      .hero-top { flex-direction: column; gap: 24px; }
-      .hero-review { align-items: flex-start; }
-
-      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
-
-      .sections-row { grid-template-columns: 1fr; }
-
-      .about-values { flex-direction: column; }
-
-      .section-card { padding: 32px 24px; }
-
-      .stats-list-item { flex-direction: column; align-items: flex-start; gap: 4px; }
-
-      .ceintro-banner { padding: 40px 24px; }
-      .ceintro-banner-content { grid-template-columns: 1fr; gap: 32px; }
-      .ceintro-title { font-size: 1.8rem; }
-
-      .coming-soon-grid { grid-template-columns: 1fr; }
-
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { flex-direction: column; gap: 10px; }
+    @media (max-width: 740px) {
+      :root { --gutter: 2rem; }
+      .nav-links, .nav-right > a:not(.Action) { display: none; }
+      .nav-burger { display: block; }
+      .nav-mobile { display: flex; }
+      .Hero h1 { font-size: 3.6rem; }
+      .Hero__content { padding: 12rem 2rem 4rem; }
+      .ProductCard { grid-template-columns: 1fr; text-align: center; }
+      .ProductCard__img { justify-self: center; }
+      .ProductCard__img img { width: 14rem; height: 14rem; border-radius: 3rem; }
+      .Footer__top { flex-direction: column; gap: 3.2rem; }
+      .Footer__cols { flex-wrap: wrap; gap: 3.2rem; }
+    }
+    @media (max-width: 374px) {
+      .Hero h1 { font-size: 3.2rem; }
+      .Hero__ctas { flex-direction: column; }
+      .Hero__ctas a { width: 100%; text-align: center; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
+  <!-- NAV -->
+  <nav class="nav">
     <div class="container">
-      <div class="header-bar">
-        <div class="header-left">
-          <nav class="header-nav">
-            <a href="#sobre">Sobre</a>
-            <a href="#produtos">Produtos</a>
-          </nav>
-        </div>
-        <a href="index.html" class="logo-group">
-          <span class="logo-text">Kodaee</span>
-        </a>
-        <div class="header-right">
-          <a href="mailto:suporte@kodaee.com" class="header-pill">Contato</a>
-          <a href="#produtos" class="header-icon">
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </a>
-        </div>
+      <a href="index.html" class="nav-logo">
+        <span>Kodaee</span>
+      </a>
+      <div class="nav-links">
+        <a href="#produtos">Produtos</a>
+        <a href="ceintro.html">Ceintro</a>
+      </div>
+      <div class="nav-right">
+        <a href="mailto:suporte@kodaee.com">Contato</a>
+        <a href="#produtos" class="Action Action--primary">Ver produtos</a>
+        <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
-  </header>
+  </nav>
+
+  <div class="nav-mobile" id="mob">
+    <a href="#produtos">Produtos</a>
+    <a href="ceintro.html">Ceintro</a>
+    <a href="mailto:suporte@kodaee.com">Contato</a>
+  </div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="Hero">
+    <div class="Hero__bg">
+      <video autoplay muted loop playsinline>
+        <source src="assets/herovideo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="Hero__content">
+      <h1>Simplificar é o que a gente faz.</h1>
+      <div class="Hero__ctas">
+        <a href="#produtos" class="Hero__cta-outline">Ver produtos</a>
+        <a href="mailto:suporte@kodaee.com" class="Action Action--primary-lg">Fale conosco</a>
+      </div>
+    </div>
+    <div class="Hero__marquee">
+      <div class="Hero__marquee-track">
+        <span>Apps</span>
+        <span>Software</span>
+        <span>Gestão</span>
+        <span>Automação</span>
+        <span>Design</span>
+        <span>Desenvolvimento</span>
+        <span>Produtividade</span>
+        <span>Mobile</span>
+        <span>Desktop</span>
+        <span>Web</span>
+        <span>Integração</span>
+        <span>Dados</span>
+        <!-- duplicate -->
+        <span>Apps</span>
+        <span>Software</span>
+        <span>Gestão</span>
+        <span>Automação</span>
+        <span>Design</span>
+        <span>Desenvolvimento</span>
+        <span>Produtividade</span>
+        <span>Mobile</span>
+        <span>Desktop</span>
+        <span>Web</span>
+        <span>Integração</span>
+        <span>Dados</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="Section" id="produtos">
     <div class="container">
-      <div class="hero-main">
-        <div class="hero-top">
-          <h1>Criamos <span class="purple">software</span> que simplifica seu dia a dia</h1>
-          <div class="hero-review">
-            <div class="hero-avatars">
-              <div class="hero-avatar">V</div>
-              <div class="hero-avatar">M</div>
-              <div class="hero-avatar">R</div>
-              <div class="hero-avatar">+</div>
-            </div>
-            <div class="hero-review-text">
-              500+ usuários<br>satisfeitos
-            </div>
-            <div class="hero-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          </div>
-        </div>
-        <div class="hero-bottom">
-          <div class="hero-bottom-left">
-            <h3>Software House</h3>
-            <p class="sub">Kodaee</p>
-            <p>A Kodaee desenvolve software inteligente para empresas e pessoas que querem fazer mais com tecnologia, sem complicação.</p>
-            <div class="hero-cta-row">
-              <a href="#produtos" class="btn-round">
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </a>
-            </div>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div class="hero-product-float">
-              <img src="assets/logo.png" alt="Ceintro">
-              <div class="hero-product-float-info">
-                <h4>Ceintro</h4>
-                <span>Gestão completa para seu negócio de alimentação</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="Section__header fade-in">
+        <span class="EyebrowText">Produtos</span>
+        <h2 class="Text--600">Nossos softwares</h2>
       </div>
 
-      <!-- ABOUT + STATS ROW -->
-      <div class="sections-row" id="sobre">
-        <div class="section-card about-card">
-          <p class="section-card-label">Quem somos</p>
-          <h2>Tecnologia acessível para todos</h2>
-          <p>A Kodaee é uma software house focada em criar soluções práticas e acessíveis para empresas e usuários finais. Nossos produtos são pensados para resolver problemas reais do dia a dia.</p>
-          <div class="about-values">
-            <div class="about-value">
-              <div class="about-value-number">500+</div>
-              <div class="about-value-label">Usuários</div>
-            </div>
-            <div class="about-value">
-              <div class="about-value-number">1</div>
-              <div class="about-value-label">Produto</div>
-            </div>
-            <div class="about-value">
-              <div class="about-value-number">100%</div>
-              <div class="about-value-label">Nacional</div>
-            </div>
-          </div>
+      <div class="ProductCard fade-in">
+        <div class="ProductCard__img">
+          <img src="assets/logo.png" alt="Ceintro">
         </div>
-        <div class="section-card stats-card">
-          <p class="section-card-label">Por que a Kodaee</p>
-          <h2>Software que resolve, sem enrolação</h2>
-          <div class="stats-list">
-            <div class="stats-list-item">
-              <span class="label">Produtos</span>
-              <span class="value">Simples e direto ao ponto</span>
-            </div>
-            <div class="stats-list-item">
-              <span class="label">Preços</span>
-              <span class="value">Acessíveis e transparentes</span>
-            </div>
-            <div class="stats-list-item">
-              <span class="label">Suporte</span>
-              <span class="value">Rápido e em português</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRODUCT -->
-      <div class="product-section" id="produtos">
-        <div class="ceintro-banner">
-          <div class="ceintro-banner-content">
-            <div class="ceintro-banner-text">
-              <img src="assets/logo.png" alt="Ceintro" class="ceintro-logo">
-              <h2 class="ceintro-title">Tudo que seu negócio precisa para <span class="ceintro-highlight">crescer do zero</span></h2>
-              <p class="ceintro-subtitle">Precificação, estoque, gestão de pedidos, motoboy e relatórios completos. O software feito para quem está começando e quer profissionalizar seu negócio de alimentação.</p>
-              <a href="ceintro.html" class="ceintro-cta-btn">Conhecer o Ceintro &rarr;</a>
-            </div>
-            <div class="ceintro-plan-card">
-              <h3 class="ceintro-plan-name">Intro</h3>
-              <p class="ceintro-plan-desc">Ideal para MEIs começando a estruturar seu negócio.</p>
-              <span class="ceintro-price-old">R$ 97,00</span>
-              <div class="ceintro-price">
-                <span class="ceintro-price-symbol">R$</span>
-                <span class="ceintro-price-value">29</span>
-                <span class="ceintro-price-cents">,99</span>
-                <span class="ceintro-price-lifetime">vitalício</span>
-              </div>
-              <span class="ceintro-price-info">Pagamento único. Sem mensalidade.</span>
-              <span class="ceintro-saving">Economize R$67 comprando agora</span>
-              <ul class="ceintro-features">
-                <li>
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  Precificação para iFood, 99Food, Rappi e AiqFome
-                </li>
-                <li>
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  Gerenciamento de estoque e embalagens
-                </li>
-                <li>
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  Gestor de pedidos e motoboy
-                </li>
-                <li>
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  Relatórios avançados
-                </li>
-                <li>
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#34d399" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  100% offline — Windows
-                </li>
-              </ul>
-              <a href="ceintro.html" class="ceintro-plan-btn">Ver planos e preços</a>
-            </div>
-          </div>
+        <div class="ProductCard__body">
+          <h3 class="Text--300" style="font-family:'Roboto',sans-serif; font-weight:900;">Ceintro</h3>
+          <p>Software de gestão para negócios de alimentação. Precificação, estoque, pedidos, entregas e relatórios.</p>
+          <a href="ceintro.html" class="Action Action--text">Saiba mais</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
+  <!-- CLOSING CTA -->
+  <section class="Section Section--dark ClosingCta">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="assets/logo-kodaee.png" alt="Kodaee">
+      <h2 class="Text--700 fade-in">Conheça nossos produtos</h2>
+      <p class="fade-in">Nossos produtos, sua rotina mais simples.</p>
+      <a href="#produtos" class="Action Action--primary-lg fade-in">Ver produtos</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="Footer">
+    <div class="container">
+      <div class="Footer__top">
+        <div class="Footer__brand">
           <span>Kodaee</span>
         </div>
-        <div class="footer-links">
-          <a href="mailto:suporte@kodaee.com">suporte@kodaee.com</a>
-          <a href="#produtos">Produtos</a>
+        <div class="Footer__cols">
+          <div class="Footer__col">
+            <h4>Produto</h4>
+            <a href="ceintro.html">Ceintro</a>
+          </div>
+          <div class="Footer__col">
+            <h4>Empresa</h4>
+            <a href="mailto:suporte@kodaee.com">Contato</a>
+          </div>
+          <div class="Footer__col">
+            <h4>Social</h4>
+            <div class="Footer__social">
+              <a href="#" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.43 0-2.59-1.16-2.59-2.59a2.59 2.59 0 0 1 2.59-2.59c.27 0 .53.04.78.12V9.7a5.63 5.63 0 0 0-.78-.05A5.64 5.64 0 0 0 4.22 15.3a5.64 5.64 0 0 0 5.64 5.64 5.64 5.64 0 0 0 5.64-5.64V9.41a7.33 7.33 0 0 0 4.28 1.38V7.7a4.28 4.28 0 0 1-3.18-1.88z"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
-        <p class="footer-copy">&copy; 2026 Kodaee. Todos os direitos reservados.</p>
       </div>
+      <p class="Footer__copy">&copy; 2026 Kodaee. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('mob').classList.remove('open');
+        document.getElementById('burger').classList.remove('open');
       });
+    });
+    document.getElementById('burger').addEventListener('click', function() {
+      this.classList.toggle('open');
+      document.getElementById('mob').classList.toggle('open');
+    });
+    // Fade in
+    const obs = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Nav scroll
+    window.addEventListener('scroll', function() {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 80);
     });
   </script>
 </body>
