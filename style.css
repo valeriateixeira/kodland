@@ -1266,6 +1266,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--pg-text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .pg-container {
