@@ -544,7 +544,7 @@
   <!-- HERO -->
   <section class="Hero">
     <div class="Hero__bg">
-      <video autoplay muted loop playsinline preload="metadata">
+      <video autoplay muted loop playsinline preload="auto">
         <source src="assets/herovideo.mp4" type="video/mp4">
       </video>
     </div>
@@ -674,6 +674,16 @@
     window.addEventListener('scroll', function() {
       document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 80);
     });
+
+    // Force autoplay on iOS/iPadOS
+    var heroVideo = document.querySelector('.Hero__bg video');
+    if (heroVideo) {
+      heroVideo.play().catch(function() {});
+      document.addEventListener('touchstart', function once() {
+        heroVideo.play().catch(function() {});
+        document.removeEventListener('touchstart', once);
+      });
+    }
   </script>
 </body>
 </html>
