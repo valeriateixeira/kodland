@@ -2237,7 +2237,7 @@ a { text-decoration: none; color: inherit; }
   right: 0;
   width: 45%;
   height: 100%;
-  background: url('assets/precifica/backgroundplan.png') no-repeat center center;
+  background: url('assets/precifica/backgroundplan.jpg') no-repeat center center;
   background-size: cover;
   mask-image: linear-gradient(to right, transparent, black 30%);
   -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
