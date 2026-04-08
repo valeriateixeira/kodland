@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /precifica
 
 Sitemap: https://kodaee.com/sitemap.xml
