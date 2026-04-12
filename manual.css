@@ -234,6 +234,11 @@
   stroke: var(--primary);
 }
 
+.sidebar-sublink {
+  padding-left: 38px;
+  font-size: 0.75rem;
+}
+
 /* SIDEBAR OVERLAY (mobile) */
 .sidebar-overlay {
   display: none;
@@ -543,6 +548,31 @@ kbd {
   color: var(--text);
   margin-top: 28px;
   margin-bottom: 12px;
+}
+
+.video-subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 32px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.video-subsection-title .vs-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-bg);
+  color: var(--primary);
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 /* NAV FEATURES */
