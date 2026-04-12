@@ -2525,6 +2525,38 @@ a { text-decoration: none; color: inherit; }
 
 .pg-footer-copy a:hover { text-decoration: underline; }
 
+.pg-footer-social {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.pg-footer-social-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pg-footer-social-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pg-text-light);
+}
+
+.pg-footer-social-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.pg-footer-social-icons a {
+  color: var(--pg-text-light);
+  transition: color 0.2s;
+}
+
+.pg-footer-social-icons a:hover {
+  color: var(--pg-primary);
+}
+
 /* ===== LIGHTBOX ===== */
 .pg-lightbox {
   position: fixed;
@@ -2672,6 +2704,11 @@ a { text-decoration: none; color: inherit; }
   }
 
   .pg-footer-copy { text-align: center; }
+
+  .pg-footer-social {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
   .pg-hero-platforms {
     gap: 10px;
