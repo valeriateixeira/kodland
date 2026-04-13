@@ -681,6 +681,23 @@
       update();
       setInterval(update, 1000);
     })();
+
+    // Video showcase play
+    (function() {
+      var banner = document.getElementById('pgVideoBanner');
+      var container = document.getElementById('pgVideoShowcase');
+      if (!banner || !container) return;
+      var video = container.querySelector('.pg-video-player');
+      banner.addEventListener('click', function() {
+        banner.style.display = 'none';
+        video.controls = true;
+        video.play();
+      });
+      video.addEventListener('ended', function() {
+        banner.style.display = '';
+        video.controls = false;
+      });
+    })();
   </script>
 
   <!-- WhatsApp floating button -->
