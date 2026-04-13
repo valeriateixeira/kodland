@@ -13,13 +13,13 @@
   <meta property="og:url" content="https://kodaee.com/ceintro.html">
   <meta property="og:title" content="Ceintro - Gestão completa para seu negócio de alimentação">
   <meta property="og:description" content="Precificação, estoque, pedidos, motoboy, cardápio virtual e atendimento automatizado via WhatsApp. Plano vitalício a partir de R$49,90.">
-  <meta property="og:image" content="https://kodaee.com/assets/precifica/precifica.png">
+  <meta property="og:image" content="https://kodaee.com/assets/precifica/precifica.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ceintro - Gestão completa para seu negócio de alimentação">
   <meta name="twitter:description" content="Precificação, estoque, pedidos, motoboy, cardápio virtual e atendimento automatizado via WhatsApp. Plano vitalício a partir de R$49,90.">
-  <meta name="twitter:image" content="https://kodaee.com/assets/precifica/precifica.png">
+  <meta name="twitter:image" content="https://kodaee.com/assets/precifica/precifica.jpg">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -215,7 +215,7 @@
       <div class="pg-sol-row">
         <div class="pg-sol-visual">
           <div class="pg-sol-placeholder">
-            <img src="assets/precifica/precifica.png" alt="Precificação Inteligente" decoding="async">
+            <img src="assets/precifica/precifica.jpg" alt="Precificação Inteligente" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="pg-sol-content">
@@ -240,7 +240,7 @@
       <div class="pg-sol-row pg-sol-row--reverse">
         <div class="pg-sol-visual">
           <div class="pg-sol-placeholder">
-            <img src="assets/precifica/estoque.png" alt="Controle de Estoque" loading="lazy" decoding="async">
+            <img src="assets/precifica/estoque.jpg" alt="Controle de Estoque" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="pg-sol-content">
@@ -290,7 +290,7 @@
       <div class="pg-sol-row pg-sol-row--reverse">
         <div class="pg-sol-visual">
           <div class="pg-sol-placeholder">
-            <img src="assets/precifica/cliente.png" alt="Gestão de Clientes" loading="lazy" decoding="async">
+            <img src="assets/precifica/cliente.jpg" alt="Gestão de Clientes" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="pg-sol-content">
@@ -314,7 +314,7 @@
       <div class="pg-sol-row">
         <div class="pg-sol-visual">
           <div class="pg-sol-placeholder">
-            <img src="assets/precifica/motoboy.png" alt="Gestão de Motoboy" loading="lazy" decoding="async">
+            <img src="assets/precifica/motoboy.jpg" alt="Gestão de Motoboy" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="pg-sol-content">
@@ -338,9 +338,9 @@
       <div class="pg-sol-row">
         <div class="pg-sol-visual">
           <div class="pg-sol-placeholder pg-sol-gallery">
-            <img src="assets/precifica/relatorio1.png" alt="Relatório 1" loading="lazy" decoding="async">
-            <img src="assets/precifica/relatorio2.png" alt="Relatório 2" loading="lazy" decoding="async">
-            <img src="assets/precifica/relatorio3.png" alt="Relatório 3" loading="lazy" decoding="async">
+            <img src="assets/precifica/relatorio1.jpg" alt="Relatório 1" loading="lazy" decoding="async">
+            <img src="assets/precifica/relatorio2.jpg" alt="Relatório 2" loading="lazy" decoding="async">
+            <img src="assets/precifica/relatorio3.jpg" alt="Relatório 3" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="pg-sol-content">
@@ -364,7 +364,7 @@
       <div class="pg-sol-row pg-sol-row--reverse">
         <div class="pg-sol-visual">
           <div class="pg-sol-placeholder">
-            <img src="assets/printer.png" alt="Impressão de Cupons Não Fiscais" loading="lazy" decoding="async">
+            <img src="assets/printer.jpg" alt="Impressão de Cupons Não Fiscais" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="pg-sol-content">
@@ -495,7 +495,7 @@
               1 Usuário
             </li>
           </ul>
-          <a href="https://buy.stripe.com/dRm9ATcvd3dq1Cj3BX2Fa02" class="pg-btn pg-btn-primary pg-btn-lg pg-btn-full pg-btn-rounded" target="_blank" rel="noopener">Comprar Agora</a>
+          <a id="stripeLink" href="https://buy.stripe.com/dRm9ATcvd3dq1Cj3BX2Fa02" class="pg-btn pg-btn-primary pg-btn-lg pg-btn-full pg-btn-rounded" target="_blank" rel="noopener">Comprar Agora</a>
           <span class="pg-pricing-guarantee">Teste por 7 dias. Se não gostar, devolvemos seu dinheiro.</span>
         </div>
         <!-- Plano Padrão -->
@@ -680,6 +680,17 @@
       }
       update();
       setInterval(update, 1000);
+    })();
+
+    // Append partner param to Stripe link
+    (function() {
+      var partner = new URLSearchParams(window.location.search).get('partner');
+      if (partner) {
+        var link = document.getElementById('stripeLink');
+        if (link) {
+          link.href += '?client_reference_id=' + encodeURIComponent(partner);
+        }
+      }
     })();
 
     // Video showcase play
