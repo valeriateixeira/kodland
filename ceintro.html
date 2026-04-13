@@ -729,7 +729,7 @@
       background: var(--pg-primary, #0960cb);
       padding: 32px 38px;
       flex: 0 0 220px;
-      border-radius: var(--pg-radius-lg, 24px) 0 0 var(--pg-radius-lg, 24px);
+      border-radius: var(--pg-radius-lg, 24px) 0 0 0;
     }
     .pm-logo {
       width: 120px;
@@ -772,8 +772,8 @@
     }
     @media (max-width: 500px) {
       .pm-card { flex-direction: column; }
-      .pm-left { padding: 24px 28px 16px; }
-      .pm-logo { width: 56px; height: 56px; }
+      .pm-left { padding: 24px 28px 16px; flex: none; }
+      .pm-logo { width: 100px; }
       .pm-right { padding: 16px 24px 24px; }
     }
     .pm-option {
