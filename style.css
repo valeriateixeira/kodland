@@ -2364,6 +2364,68 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 20px;
 }
 
+.pg-pricing-timer {
+  text-align: center;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.pg-timer-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ef4444;
+  margin-bottom: 8px;
+}
+
+.pg-timer-digits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pg-timer-block {
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 44px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.pg-timer-block span {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ef4444;
+}
+
+.pg-timer-block small {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #f87171;
+  margin-top: 2px;
+}
+
+.pg-timer-sep {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.pg-pricing-guarantee {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--pg-text-muted, #64748b);
+  text-align: center;
+  margin-top: 12px;
+}
+
 .pg-pricing-features {
   list-style: none;
   display: flex;
