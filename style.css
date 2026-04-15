@@ -1512,7 +1512,7 @@ a { text-decoration: none; color: inherit; }
 .pg-hero {
   padding: 100px 0 0;
   min-height: 25vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.45)), url('assets/herobackground.png') center 1%/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.45)), url('assets/herobackground.jpg') center 1%/cover no-repeat;
 }
 
 .pg-hero > .pg-container {
