@@ -152,6 +152,7 @@
             <a href="#navegacao-categoria" class="sidebar-link sidebar-sublink" data-section="navegacao-categoria">Navegue entre categorias</a>
             <a href="#cadastrando-pedido" class="sidebar-link sidebar-sublink" data-section="cadastrando-pedido">Cadastrando um pedido do zero</a>
             <a href="#relatorios" class="sidebar-link sidebar-sublink" data-section="relatorios">Acompanhe seus relatórios</a>
+            <a href="#impressora-termica" class="sidebar-link sidebar-sublink" data-section="impressora-termica">Configure sua impressora térmica</a>
 
             <a href="#atualizar" class="sidebar-link" data-section="atualizar">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
@@ -168,10 +169,6 @@
             <a href="#sincronizar" class="sidebar-link" data-section="sincronizar">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/></svg>
               Sincronizar via Google Drive
-            </a>
-            <a href="#faq" class="sidebar-link" data-section="faq">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Perguntas Frequentes
             </a>
             <a href="#suporte" class="sidebar-link" data-section="suporte">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -625,6 +622,29 @@
                 <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
               </div>
             </div>
+
+            <h4 class="video-subsection-title" id="impressora-termica">
+              <span class="vs-icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+              Configure sua impressora térmica
+            </h4>
+            <div class="video-container" id="videoContainerImpressora">
+              <div class="video-banner" data-video="impressora">
+                <img src="assets/logo.png" alt="Ceintro" class="video-banner-logo" loading="lazy" decoding="async">
+                <span class="video-banner-title">Configure sua impressora térmica</span>
+                <div class="video-play-btn">
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <video src="assets/precifica_manual/impressora.mp4" class="video-player" preload="none"></video>
+              <div class="vc-pause-overlay"><svg width="56" height="56" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="video-controls">
+                <button class="vc-btn vc-play-pause" title="Play/Pause"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path class="vc-icon-play" d="M8 5v14l11-7z"/><path class="vc-icon-pause" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" style="display:none"/></svg></button>
+                <button class="vc-btn vc-stop" title="Parar"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg></button>
+                <span class="vc-time">0:00 / 0:00</span>
+                <div class="vc-progress"><div class="vc-progress-filled"></div></div>
+                <button class="vc-btn vc-fullscreen" title="Tela cheia"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+              </div>
+            </div>
           </section>
 
           <!-- SECTION 4: ATUALIZAR -->
@@ -707,28 +727,11 @@
             </ol>
           </section>
 
-          <!-- SECTION 10: FAQ -->
-          <section class="manual-card" id="faq">
-            <div class="section-header">
-              <span class="section-number">8</span>
-              <h2>Perguntas Frequentes (FAQ)</h2>
-            </div>
-            <div class="faq-list">
-              <details class="faq-item" open>
-                <summary>O programa não abre após a instalação. O que fazer?</summary>
-                <p>Tente clicar com o botão direito no ícone e selecionar <strong>"Executar como Administrador"</strong>. Verifique também se seu antivírus não bloqueou o arquivo por engano.</p>
-              </details>
-              <details class="faq-item">
-                <summary>Onde meus arquivos ficam salvos?</summary>
-                <p>Por padrão, os arquivos são salvos na pasta <strong>C:\Users\{usuario}\AppData\Local\Programs\precifica-gestor</strong>.</p>
-              </details>
-            </div>
-          </section>
 
-          <!-- SECTION 11: SUPORTE -->
+          <!-- SECTION 10: SUPORTE -->
           <section class="manual-card manual-card-support" id="suporte">
             <div class="section-header">
-              <span class="section-number">9</span>
+              <span class="section-number">8</span>
               <h2>Suporte Técnico</h2>
             </div>
             <p>Se precisar de ajuda extra, nossa equipe está à disposição:</p>
